@@ -1,5 +1,6 @@
 package com.example.sistemaGestionEmpleados.services;
 
+import com.example.sistemaGestionEmpleados.exceptions.EmpleadoNoEncontradoException;
 import com.example.sistemaGestionEmpleados.models.Empleado;
 
 import java.math.BigDecimal;
@@ -12,6 +13,6 @@ public interface EmpleadoService {
     List<Empleado> buscarPorRangoSalario(BigDecimal salarioMin, BigDecimal salarioMax);
     BigDecimal obtenerSalarioPromedioPorDepartamento(Long departamentoId);
     List<Empleado> obtenerTodos();
-    Empleado actualizar(Long id, Empleado empleado);
+    Empleado actualizar(Long id, Empleado empleado) throws EmpleadoNoEncontradoException;
     void eliminar(Long id);
 }

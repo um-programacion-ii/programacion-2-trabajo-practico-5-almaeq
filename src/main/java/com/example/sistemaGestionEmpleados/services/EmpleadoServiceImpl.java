@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 @Transactional
 public class EmpleadoServiceImpl implements EmpleadoService {
-    
+
     private final EmpleadoRepository empleadoRepository;
     private final DepartamentoRepository departamentoRepository;
 
