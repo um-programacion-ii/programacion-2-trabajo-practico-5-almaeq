@@ -1,4 +1,4 @@
-package models;
+package com.example.sistemaGestionEmpleados.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
