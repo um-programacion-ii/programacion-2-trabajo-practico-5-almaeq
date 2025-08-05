@@ -26,7 +26,7 @@ public class DepartamentoServiceImpl implements DepartamentoService {
     @Override
     public Departamento buscarPorId(Long id) throws DepartamentoNoEncontradoException {
         return departamentoRepository.findById(id)
-                .orElseThrow(() -> new DepartamentoNoEncontradoException("Proyecto no encontrado con ID: " + id));
+                .orElseThrow(() -> new DepartamentoNoEncontradoException("Departamento no encontrado con ID: " + id));
     }
 
     @Override

@@ -3,7 +3,6 @@ package com.example.sistemaGestionEmpleados.services;
 import com.example.sistemaGestionEmpleados.exceptions.DepartamentoNoEncontradoException;
 import com.example.sistemaGestionEmpleados.models.Departamento;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 public interface DepartamentoService {
