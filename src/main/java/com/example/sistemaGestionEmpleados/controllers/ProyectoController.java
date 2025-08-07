@@ -34,8 +34,8 @@ public class ProyectoController {
     }
 
     @PutMapping("/{id}")
-    public Proyecto actualizar(@PathVariable Long id, @RequestBody Proyecto departamento) {
-        return proyectoService.actualizar(id, departamento);
+    public Proyecto actualizar(@PathVariable Long id, @RequestBody Proyecto proyecto) {
+        return proyectoService.actualizar(id, proyecto);
     }
 
     @DeleteMapping("/{id}")
