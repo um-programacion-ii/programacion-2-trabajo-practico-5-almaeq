@@ -1,6 +1,5 @@
 package com.example.sistemaGestionEmpleados.services;
 
-import com.example.sistemaGestionEmpleados.exceptions.EmpleadoNoEncontradoException;
 import com.example.sistemaGestionEmpleados.exceptions.ProyectoNoEncontradoException;
 import com.example.sistemaGestionEmpleados.models.Proyecto;
 import com.example.sistemaGestionEmpleados.repositories.ProyectoRepository;
@@ -28,7 +27,7 @@ public class ProyectoServiceImpl implements ProyectoService {
     @Override
     public Proyecto buscarPorId(Long id) {
         return proyectoRepository.findById(id)
-                .orElseThrow(() -> new EmpleadoNoEncontradoException("Proyecto no encontrado con ID: " + id));
+                .orElseThrow(() -> new ProyectoNoEncontradoException("Proyecto no encontrado con ID: " + id));
     }
 
     @Override
@@ -48,7 +47,7 @@ public class ProyectoServiceImpl implements ProyectoService {
     @Override
     public void eliminar(Long id) {
         if (!proyectoRepository.existsById(id)) {
-            throw new EmpleadoNoEncontradoException("Proyecto no encontrado con ID: " + id);
+            throw new ProyectoNoEncontradoException("Proyecto no encontrado con ID: " + id);
         }
         proyectoRepository.deleteById(id);
     }
