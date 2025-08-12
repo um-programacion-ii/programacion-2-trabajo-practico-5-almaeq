@@ -73,9 +73,6 @@ Usé ese prompt porque quería ver si usar el @validated o el @valid o los dos
 ### Aprendizajes Obtenidos:
 - Lo que hace el @Valid y el @Validated
 
-
-# Prompts de Desarrollo
-
 ## Prompt 2: Saber como conectar la parte de las excepciones con los controllers
 
 ### Prompt Utilizado:
