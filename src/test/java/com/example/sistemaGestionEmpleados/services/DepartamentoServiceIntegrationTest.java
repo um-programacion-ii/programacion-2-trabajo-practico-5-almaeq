@@ -32,15 +32,13 @@ public class DepartamentoServiceIntegrationTest {
 
     @Test
     void cuandoGuardarDepartamento_entoncesSePersisteCorrectamente() {
-        // Arrange
+
         Departamento departamento = new Departamento();
         departamento.setNombre("Recursos Humanos");
         departamento.setDescripcion("Departamento de gestión de personal");
 
-        // Act
         Departamento departamentoGuardado = departamentoService.guardar(departamento);
 
-        // Assert
         assertNotNull(departamentoGuardado);
         assertNotNull(departamentoGuardado.getId());
         assertEquals("Recursos Humanos", departamentoGuardado.getNombre());
@@ -49,13 +47,11 @@ public class DepartamentoServiceIntegrationTest {
 
     @Test
     void cuandoBuscarPorIdExistente_entoncesRetornaDepartamento() {
-        // Arrange
+
         Departamento departamentoGuardado = departamentoService.guardar(crearDepartamentoDePrueba("Finanzas"));
 
-        // Act
         Departamento encontrado = departamentoService.buscarPorId(departamentoGuardado.getId());
 
-        // Assert
         assertNotNull(encontrado);
         assertEquals(departamentoGuardado.getId(), encontrado.getId());
         assertEquals("Finanzas", encontrado.getNombre());
@@ -63,10 +59,9 @@ public class DepartamentoServiceIntegrationTest {
 
     @Test
     void cuandoBuscarPorIdNoExistente_entoncesLanzaDepartamentoNoEncontradoException() {
-        // Arrange
+
         Long idInexistente = 123L;
 
-        // Act & Assert
         DepartamentoNoEncontradoException exception = assertThrows(DepartamentoNoEncontradoException.class, () -> {
             departamentoService.buscarPorId(idInexistente);
         });
@@ -76,7 +71,7 @@ public class DepartamentoServiceIntegrationTest {
 
     @Test
     void cuandoActualizarDepartamento_entoncesSeModificaCorrectamente() {
-        // Arrange
+
         Departamento departamentoOriginal = departamentoService.guardar(crearDepartamentoDePrueba("Marketing"));
         Long idOriginal = departamentoOriginal.getId();
 
@@ -84,10 +79,8 @@ public class DepartamentoServiceIntegrationTest {
         datosNuevos.setNombre("Marketing Digital");
         datosNuevos.setDescripcion("Estrategias de marketing online");
 
-        // Act
         Departamento departamentoActualizado = departamentoService.actualizar(idOriginal, datosNuevos);
 
-        // Assert
         assertNotNull(departamentoActualizado);
         assertEquals(idOriginal, departamentoActualizado.getId());
         assertEquals("Marketing Digital", departamentoActualizado.getNombre());
@@ -96,11 +89,10 @@ public class DepartamentoServiceIntegrationTest {
 
     @Test
     void cuandoActualizarDepartamentoNoExistente_entoncesLanzaDepartamentoNoEncontradoException() {
-        // Arrange
+
         Long idInexistente = 123L;
         Departamento datosNuevos = crearDepartamentoDePrueba("Ventas");
 
-        // Act & Assert
         assertThrows(DepartamentoNoEncontradoException.class, () -> {
             departamentoService.actualizar(idInexistente, datosNuevos);
         });
@@ -108,24 +100,21 @@ public class DepartamentoServiceIntegrationTest {
 
     @Test
     void cuandoEliminarDepartamentoExistente_entoncesDejaDeExistir() {
-        // Arrange
+
         Departamento departamentoGuardado = departamentoService.guardar(crearDepartamentoDePrueba("Logística"));
         Long id = departamentoGuardado.getId();
         assertTrue(departamentoRepository.existsById(id));
 
-        // Act
         departamentoService.eliminar(id);
 
-        // Assert
         assertFalse(departamentoRepository.existsById(id));
     }
 
     @Test
     void cuandoEliminarDepartamentoNoExistente_entoncesLanzaDepartamentoNoEncontradoException() {
-        // Arrange
+
         Long idInexistente = 123L;
 
-        // Act & Assert
         assertThrows(DepartamentoNoEncontradoException.class, () -> {
             departamentoService.eliminar(idInexistente);
         });
@@ -133,23 +122,18 @@ public class DepartamentoServiceIntegrationTest {
 
     @Test
     void cuandoObtenerTodos_entoncesRetornaListaDeDepartamentos() {
-        // Arrange
+
         departamentoService.guardar(crearDepartamentoDePrueba("Calidad"));
         departamentoService.guardar(crearDepartamentoDePrueba("Soporte"));
 
-        // Act
         List<Departamento> departamentos = departamentoService.obtenerTodos();
 
-        // Assert
         assertNotNull(departamentos);
         assertEquals(2, departamentos.size());
     }
 
-    /**
-     * Método de ayuda para crear una instancia de Departamento con un nombre específico.
-     * @param nombre El nombre del departamento.
-     * @return Un objeto Departamento.
-     */
+     //Método de ayuda para crear una instancia de Departamento con un nombre específico.
+
     private Departamento crearDepartamentoDePrueba(String nombre) {
         Departamento depto = new Departamento();
         depto.setNombre(nombre);
