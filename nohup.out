@@ -62,3 +62,1195 @@ Assuming missing side
 2025-08-04 22:58:24,197 [   3846]   WARN - #c.i.i.s.p.i.SharedIndexInfrastructure - Skipped 2 shared indexes: bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53, bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53
 2025-08-04 22:58:25,348 [   4997]   WARN - #c.i.s.c.i.StationSocketConnectionLoop - Discovery connection failed with NoSuchFileException (/run/user/1000/jb.station.sock)
 2025-08-04 22:58:50,157 [  29806]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2025-08-12 16:43:15,869 [   4736]   WARN - #c.i.u.j.JBCefApp - JCefAppConfig.class is not from a JBR module, url: jar:file:/opt/android-studio/lib/lib.jar!/com/jetbrains/cef/JCefAppConfig.class (Use JBR bundled with the IDE)
+2025-08-12 16:43:16,111 [   4978]   WARN - #com.android.tools.ndk.HotfixForOCInitialTablesBuildingActivity - Overriding OCInitialTablesBuildingActivity with HotfixForOCInitialTablesBuildingActivity
+2025-08-12 16:43:16,278 [   5145]   WARN - #com.android.ddmlib - * daemon not running; starting now at tcp:5037
+2025-08-12 16:43:17,285 [   6152]   WARN - #com.android.ddmlib - * daemon started successfully
+2025-08-12 16:43:22,543 [  11410]   WARN - #com.android.tools.idea.preview.find.UastAnnotationAttributesProvider - Resolution of showDecoration attempted while index not ready
+com.intellij.openapi.project.IndexNotReadyException: Please change caller according to com.intellij.openapi.project.IndexNotReadyException documentation. Dumb mode start trace is in attachment.
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:69)
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:65)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:67)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:48)
+	at org.jetbrains.kotlin.analysis.api.fir.KaFirSessionProvider.beforeEnteringAnalysis(KaFirSessionProvider.kt:127)
+	at org.jetbrains.uast.kotlin.FirKotlinUastResolveProviderService.findDefaultValueForAnnotationAttribute(FirKotlinUastResolveProviderService.kt:1020)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeDefaultValue(KotlinUAnnotation.kt:56)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeValue(KotlinUAnnotation.kt:45)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getAttributeValue(UastAnnotationAttributesProvider.kt:35)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getBooleanAttribute(UastAnnotationAttributesProvider.kt:56)
+	at com.android.tools.preview.ComposePreviewElementConstructionKt.previewAnnotationToPreviewElement(ComposePreviewElementConstruction.kt:48)
+	at com.android.tools.idea.compose.preview.PreviewElementFinderUtilsKt.toPreviewElement$lambda$8(PreviewElementFinderUtils.kt:228)
+	at com.intellij.openapi.application.rw.InternalReadAction.insideReadAction(InternalReadAction.kt:120)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable$lambda$6(InternalReadAction.kt:110)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2$lambda$1(cancellableReadAction.kt:32)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction$lambda$11(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1064)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2(cancellableReadAction.kt:30)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtilService.runActionAndCancelBeforeWrite(ProgressIndicatorUtilService.java:73)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtils.runActionAndCancelBeforeWrite(ProgressIndicatorUtils.java:152)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal(cancellableReadAction.kt:28)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable(InternalReadAction.kt:109)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadAction(InternalReadAction.kt:93)
+	at com.intellij.openapi.application.rw.InternalReadAction.readLoop(InternalReadAction.kt:80)
+	at com.intellij.openapi.application.rw.InternalReadAction.access$readLoop(InternalReadAction.kt:17)
+	at com.intellij.openapi.application.rw.InternalReadAction$runReadAction$7.invokeSuspend(InternalReadAction.kt:59)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+2025-08-12 16:43:22,548 [  11415]   WARN - #com.android.tools.idea.preview.find.UastAnnotationAttributesProvider - Resolution of showSystemUi attempted while index not ready
+com.intellij.openapi.project.IndexNotReadyException: Please change caller according to com.intellij.openapi.project.IndexNotReadyException documentation. Dumb mode start trace is in attachment.
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:69)
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:65)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:67)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:48)
+	at org.jetbrains.kotlin.analysis.api.fir.KaFirSessionProvider.beforeEnteringAnalysis(KaFirSessionProvider.kt:127)
+	at org.jetbrains.uast.kotlin.FirKotlinUastResolveProviderService.findDefaultValueForAnnotationAttribute(FirKotlinUastResolveProviderService.kt:1020)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeDefaultValue(KotlinUAnnotation.kt:56)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeValue(KotlinUAnnotation.kt:45)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getAttributeValue(UastAnnotationAttributesProvider.kt:35)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getBooleanAttribute(UastAnnotationAttributesProvider.kt:56)
+	at com.android.tools.preview.ComposePreviewElementConstructionKt.previewAnnotationToPreviewElement(ComposePreviewElementConstruction.kt:49)
+	at com.android.tools.idea.compose.preview.PreviewElementFinderUtilsKt.toPreviewElement$lambda$8(PreviewElementFinderUtils.kt:228)
+	at com.intellij.openapi.application.rw.InternalReadAction.insideReadAction(InternalReadAction.kt:120)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable$lambda$6(InternalReadAction.kt:110)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2$lambda$1(cancellableReadAction.kt:32)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction$lambda$11(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1064)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2(cancellableReadAction.kt:30)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtilService.runActionAndCancelBeforeWrite(ProgressIndicatorUtilService.java:73)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtils.runActionAndCancelBeforeWrite(ProgressIndicatorUtils.java:152)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal(cancellableReadAction.kt:28)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable(InternalReadAction.kt:109)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadAction(InternalReadAction.kt:93)
+	at com.intellij.openapi.application.rw.InternalReadAction.readLoop(InternalReadAction.kt:80)
+	at com.intellij.openapi.application.rw.InternalReadAction.access$readLoop(InternalReadAction.kt:17)
+	at com.intellij.openapi.application.rw.InternalReadAction$runReadAction$7.invokeSuspend(InternalReadAction.kt:59)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+2025-08-12 16:43:22,553 [  11420]   WARN - #com.android.tools.idea.preview.find.UastAnnotationAttributesProvider - Resolution of showBackground attempted while index not ready
+com.intellij.openapi.project.IndexNotReadyException: Please change caller according to com.intellij.openapi.project.IndexNotReadyException documentation. Dumb mode start trace is in attachment.
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:69)
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:65)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:67)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:48)
+	at org.jetbrains.kotlin.analysis.api.fir.KaFirSessionProvider.beforeEnteringAnalysis(KaFirSessionProvider.kt:127)
+	at org.jetbrains.uast.kotlin.internal.FirKotlinUastConstantEvaluator.evaluate(FirKotlinUastConstantEvaluator.kt:196)
+	at org.jetbrains.uast.kotlin.FirKotlinUastResolveProviderService.evaluate(FirKotlinUastResolveProviderService.kt:846)
+	at org.jetbrains.uast.kotlin.KotlinEvaluatableUElement.evaluate(KotlinEvaluatableUElement.kt:13)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getAttributeValue(UastAnnotationAttributesProvider.kt:86)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getBooleanAttribute(UastAnnotationAttributesProvider.kt:56)
+	at com.android.tools.preview.ComposePreviewElementConstructionKt.previewAnnotationToPreviewElement(ComposePreviewElementConstruction.kt:51)
+	at com.android.tools.idea.compose.preview.PreviewElementFinderUtilsKt.toPreviewElement$lambda$8(PreviewElementFinderUtils.kt:228)
+	at com.intellij.openapi.application.rw.InternalReadAction.insideReadAction(InternalReadAction.kt:120)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable$lambda$6(InternalReadAction.kt:110)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2$lambda$1(cancellableReadAction.kt:32)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction$lambda$11(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1064)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2(cancellableReadAction.kt:30)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtilService.runActionAndCancelBeforeWrite(ProgressIndicatorUtilService.java:73)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtils.runActionAndCancelBeforeWrite(ProgressIndicatorUtils.java:152)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal(cancellableReadAction.kt:28)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable(InternalReadAction.kt:109)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadAction(InternalReadAction.kt:93)
+	at com.intellij.openapi.application.rw.InternalReadAction.readLoop(InternalReadAction.kt:80)
+	at com.intellij.openapi.application.rw.InternalReadAction.access$readLoop(InternalReadAction.kt:17)
+	at com.intellij.openapi.application.rw.InternalReadAction$runReadAction$7.invokeSuspend(InternalReadAction.kt:59)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+2025-08-12 16:43:22,562 [  11429]   WARN - #com.android.tools.idea.preview.find.UastAnnotationAttributesProvider - Resolution of apiLevel attempted while index not ready
+com.intellij.openapi.project.IndexNotReadyException: Please change caller according to com.intellij.openapi.project.IndexNotReadyException documentation. Dumb mode start trace is in attachment.
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:69)
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:65)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:67)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:48)
+	at org.jetbrains.kotlin.analysis.api.fir.KaFirSessionProvider.beforeEnteringAnalysis(KaFirSessionProvider.kt:127)
+	at org.jetbrains.uast.kotlin.FirKotlinUastResolveProviderService.findDefaultValueForAnnotationAttribute(FirKotlinUastResolveProviderService.kt:1020)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeDefaultValue(KotlinUAnnotation.kt:56)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeValue(KotlinUAnnotation.kt:45)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getAttributeValue(UastAnnotationAttributesProvider.kt:35)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getIntAttribute(UastAnnotationAttributesProvider.kt:44)
+	at com.android.tools.preview.ComposePreviewConfigurationKt.attributesToConfiguration(ComposePreviewConfiguration.kt:37)
+	at com.android.tools.preview.ComposePreviewElementConstructionKt.previewAnnotationToPreviewElement(ComposePreviewElementConstruction.kt:87)
+	at com.android.tools.idea.compose.preview.PreviewElementFinderUtilsKt.toPreviewElement$lambda$8(PreviewElementFinderUtils.kt:228)
+	at com.intellij.openapi.application.rw.InternalReadAction.insideReadAction(InternalReadAction.kt:120)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable$lambda$6(InternalReadAction.kt:110)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2$lambda$1(cancellableReadAction.kt:32)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction$lambda$11(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1064)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2(cancellableReadAction.kt:30)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtilService.runActionAndCancelBeforeWrite(ProgressIndicatorUtilService.java:73)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtils.runActionAndCancelBeforeWrite(ProgressIndicatorUtils.java:152)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal(cancellableReadAction.kt:28)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable(InternalReadAction.kt:109)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadAction(InternalReadAction.kt:93)
+	at com.intellij.openapi.application.rw.InternalReadAction.readLoop(InternalReadAction.kt:80)
+	at com.intellij.openapi.application.rw.InternalReadAction.access$readLoop(InternalReadAction.kt:17)
+	at com.intellij.openapi.application.rw.InternalReadAction$runReadAction$7.invokeSuspend(InternalReadAction.kt:59)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+2025-08-12 16:43:22,571 [  11438]   WARN - #com.android.tools.idea.preview.find.UastAnnotationAttributesProvider - Resolution of theme attempted while index not ready
+com.intellij.openapi.project.IndexNotReadyException: Please change caller according to com.intellij.openapi.project.IndexNotReadyException documentation. Dumb mode start trace is in attachment.
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:69)
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:65)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:67)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:48)
+	at org.jetbrains.kotlin.analysis.api.fir.KaFirSessionProvider.beforeEnteringAnalysis(KaFirSessionProvider.kt:127)
+	at org.jetbrains.uast.kotlin.FirKotlinUastResolveProviderService.findDefaultValueForAnnotationAttribute(FirKotlinUastResolveProviderService.kt:1020)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeDefaultValue(KotlinUAnnotation.kt:56)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeValue(KotlinUAnnotation.kt:45)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getAttributeValue(UastAnnotationAttributesProvider.kt:35)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getStringAttribute(UastAnnotationAttributesProvider.kt:48)
+	at com.android.tools.preview.ComposePreviewConfigurationKt.attributesToConfiguration(ComposePreviewConfiguration.kt:38)
+	at com.android.tools.preview.ComposePreviewElementConstructionKt.previewAnnotationToPreviewElement(ComposePreviewElementConstruction.kt:87)
+	at com.android.tools.idea.compose.preview.PreviewElementFinderUtilsKt.toPreviewElement$lambda$8(PreviewElementFinderUtils.kt:228)
+	at com.intellij.openapi.application.rw.InternalReadAction.insideReadAction(InternalReadAction.kt:120)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable$lambda$6(InternalReadAction.kt:110)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2$lambda$1(cancellableReadAction.kt:32)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction$lambda$11(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1064)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2(cancellableReadAction.kt:30)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtilService.runActionAndCancelBeforeWrite(ProgressIndicatorUtilService.java:73)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtils.runActionAndCancelBeforeWrite(ProgressIndicatorUtils.java:152)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal(cancellableReadAction.kt:28)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable(InternalReadAction.kt:109)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadAction(InternalReadAction.kt:93)
+	at com.intellij.openapi.application.rw.InternalReadAction.readLoop(InternalReadAction.kt:80)
+	at com.intellij.openapi.application.rw.InternalReadAction.access$readLoop(InternalReadAction.kt:17)
+	at com.intellij.openapi.application.rw.InternalReadAction$runReadAction$7.invokeSuspend(InternalReadAction.kt:59)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+2025-08-12 16:43:22,631 [  11498]   WARN - #com.android.tools.idea.preview.find.UastAnnotationAttributesProvider - Resolution of width attempted while index not ready
+com.intellij.openapi.project.IndexNotReadyException: Please change caller according to com.intellij.openapi.project.IndexNotReadyException documentation. Dumb mode start trace is in attachment.
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:69)
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:65)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:67)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:48)
+	at org.jetbrains.kotlin.analysis.api.fir.KaFirSessionProvider.beforeEnteringAnalysis(KaFirSessionProvider.kt:127)
+	at org.jetbrains.uast.kotlin.FirKotlinUastResolveProviderService.findDefaultValueForAnnotationAttribute(FirKotlinUastResolveProviderService.kt:1020)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeDefaultValue(KotlinUAnnotation.kt:56)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeValue(KotlinUAnnotation.kt:45)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getAttributeValue(UastAnnotationAttributesProvider.kt:35)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getIntAttribute(UastAnnotationAttributesProvider.kt:44)
+	at com.android.tools.preview.ComposePreviewConfigurationKt.attributesToConfiguration(ComposePreviewConfiguration.kt:41)
+	at com.android.tools.preview.ComposePreviewElementConstructionKt.previewAnnotationToPreviewElement(ComposePreviewElementConstruction.kt:87)
+	at com.android.tools.idea.compose.preview.PreviewElementFinderUtilsKt.toPreviewElement$lambda$8(PreviewElementFinderUtils.kt:228)
+	at com.intellij.openapi.application.rw.InternalReadAction.insideReadAction(InternalReadAction.kt:120)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable$lambda$6(InternalReadAction.kt:110)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2$lambda$1(cancellableReadAction.kt:32)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction$lambda$11(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1064)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2(cancellableReadAction.kt:30)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtilService.runActionAndCancelBeforeWrite(ProgressIndicatorUtilService.java:73)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtils.runActionAndCancelBeforeWrite(ProgressIndicatorUtils.java:152)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal(cancellableReadAction.kt:28)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable(InternalReadAction.kt:109)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadAction(InternalReadAction.kt:93)
+	at com.intellij.openapi.application.rw.InternalReadAction.readLoop(InternalReadAction.kt:80)
+	at com.intellij.openapi.application.rw.InternalReadAction.access$readLoop(InternalReadAction.kt:17)
+	at com.intellij.openapi.application.rw.InternalReadAction$runReadAction$7.invokeSuspend(InternalReadAction.kt:59)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+2025-08-12 16:43:22,646 [  11513]   WARN - #com.android.tools.idea.preview.find.UastAnnotationAttributesProvider - Resolution of widthDp attempted while index not ready
+com.intellij.openapi.project.IndexNotReadyException: Please change caller according to com.intellij.openapi.project.IndexNotReadyException documentation. Dumb mode start trace is in attachment.
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:69)
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:65)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:67)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:48)
+	at org.jetbrains.kotlin.analysis.api.fir.KaFirSessionProvider.beforeEnteringAnalysis(KaFirSessionProvider.kt:127)
+	at org.jetbrains.uast.kotlin.FirKotlinUastResolveProviderService.findDefaultValueForAnnotationAttribute(FirKotlinUastResolveProviderService.kt:1020)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeDefaultValue(KotlinUAnnotation.kt:56)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeValue(KotlinUAnnotation.kt:45)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getAttributeValue(UastAnnotationAttributesProvider.kt:35)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getIntAttribute(UastAnnotationAttributesProvider.kt:44)
+	at com.android.tools.preview.ComposePreviewConfigurationKt.attributesToConfiguration(ComposePreviewConfiguration.kt:42)
+	at com.android.tools.preview.ComposePreviewElementConstructionKt.previewAnnotationToPreviewElement(ComposePreviewElementConstruction.kt:87)
+	at com.android.tools.idea.compose.preview.PreviewElementFinderUtilsKt.toPreviewElement$lambda$8(PreviewElementFinderUtils.kt:228)
+	at com.intellij.openapi.application.rw.InternalReadAction.insideReadAction(InternalReadAction.kt:120)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable$lambda$6(InternalReadAction.kt:110)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2$lambda$1(cancellableReadAction.kt:32)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction$lambda$11(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1064)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2(cancellableReadAction.kt:30)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtilService.runActionAndCancelBeforeWrite(ProgressIndicatorUtilService.java:73)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtils.runActionAndCancelBeforeWrite(ProgressIndicatorUtils.java:152)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal(cancellableReadAction.kt:28)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable(InternalReadAction.kt:109)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadAction(InternalReadAction.kt:93)
+	at com.intellij.openapi.application.rw.InternalReadAction.readLoop(InternalReadAction.kt:80)
+	at com.intellij.openapi.application.rw.InternalReadAction.access$readLoop(InternalReadAction.kt:17)
+	at com.intellij.openapi.application.rw.InternalReadAction$runReadAction$7.invokeSuspend(InternalReadAction.kt:59)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+2025-08-12 16:43:22,657 [  11524]   WARN - #com.android.tools.idea.preview.find.UastAnnotationAttributesProvider - Resolution of height attempted while index not ready
+com.intellij.openapi.project.IndexNotReadyException: Please change caller according to com.intellij.openapi.project.IndexNotReadyException documentation. Dumb mode start trace is in attachment.
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:69)
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:65)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:67)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:48)
+	at org.jetbrains.kotlin.analysis.api.fir.KaFirSessionProvider.beforeEnteringAnalysis(KaFirSessionProvider.kt:127)
+	at org.jetbrains.uast.kotlin.FirKotlinUastResolveProviderService.findDefaultValueForAnnotationAttribute(FirKotlinUastResolveProviderService.kt:1020)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeDefaultValue(KotlinUAnnotation.kt:56)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeValue(KotlinUAnnotation.kt:45)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getAttributeValue(UastAnnotationAttributesProvider.kt:35)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getIntAttribute(UastAnnotationAttributesProvider.kt:44)
+	at com.android.tools.preview.ComposePreviewConfigurationKt.attributesToConfiguration(ComposePreviewConfiguration.kt:44)
+	at com.android.tools.preview.ComposePreviewElementConstructionKt.previewAnnotationToPreviewElement(ComposePreviewElementConstruction.kt:87)
+	at com.android.tools.idea.compose.preview.PreviewElementFinderUtilsKt.toPreviewElement$lambda$8(PreviewElementFinderUtils.kt:228)
+	at com.intellij.openapi.application.rw.InternalReadAction.insideReadAction(InternalReadAction.kt:120)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable$lambda$6(InternalReadAction.kt:110)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2$lambda$1(cancellableReadAction.kt:32)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction$lambda$11(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1064)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2(cancellableReadAction.kt:30)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtilService.runActionAndCancelBeforeWrite(ProgressIndicatorUtilService.java:73)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtils.runActionAndCancelBeforeWrite(ProgressIndicatorUtils.java:152)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal(cancellableReadAction.kt:28)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable(InternalReadAction.kt:109)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadAction(InternalReadAction.kt:93)
+	at com.intellij.openapi.application.rw.InternalReadAction.readLoop(InternalReadAction.kt:80)
+	at com.intellij.openapi.application.rw.InternalReadAction.access$readLoop(InternalReadAction.kt:17)
+	at com.intellij.openapi.application.rw.InternalReadAction$runReadAction$7.invokeSuspend(InternalReadAction.kt:59)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+2025-08-12 16:43:22,659 [  11526]   WARN - #com.android.tools.idea.preview.find.UastAnnotationAttributesProvider - Resolution of heightDp attempted while index not ready
+com.intellij.openapi.project.IndexNotReadyException: Please change caller according to com.intellij.openapi.project.IndexNotReadyException documentation. Dumb mode start trace is in attachment.
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:69)
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:65)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:67)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:48)
+	at org.jetbrains.kotlin.analysis.api.fir.KaFirSessionProvider.beforeEnteringAnalysis(KaFirSessionProvider.kt:127)
+	at org.jetbrains.uast.kotlin.FirKotlinUastResolveProviderService.findDefaultValueForAnnotationAttribute(FirKotlinUastResolveProviderService.kt:1020)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeDefaultValue(KotlinUAnnotation.kt:56)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeValue(KotlinUAnnotation.kt:45)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getAttributeValue(UastAnnotationAttributesProvider.kt:35)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getIntAttribute(UastAnnotationAttributesProvider.kt:44)
+	at com.android.tools.preview.ComposePreviewConfigurationKt.attributesToConfiguration(ComposePreviewConfiguration.kt:45)
+	at com.android.tools.preview.ComposePreviewElementConstructionKt.previewAnnotationToPreviewElement(ComposePreviewElementConstruction.kt:87)
+	at com.android.tools.idea.compose.preview.PreviewElementFinderUtilsKt.toPreviewElement$lambda$8(PreviewElementFinderUtils.kt:228)
+	at com.intellij.openapi.application.rw.InternalReadAction.insideReadAction(InternalReadAction.kt:120)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable$lambda$6(InternalReadAction.kt:110)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2$lambda$1(cancellableReadAction.kt:32)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction$lambda$11(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1064)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2(cancellableReadAction.kt:30)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtilService.runActionAndCancelBeforeWrite(ProgressIndicatorUtilService.java:73)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtils.runActionAndCancelBeforeWrite(ProgressIndicatorUtils.java:152)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal(cancellableReadAction.kt:28)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable(InternalReadAction.kt:109)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadAction(InternalReadAction.kt:93)
+	at com.intellij.openapi.application.rw.InternalReadAction.readLoop(InternalReadAction.kt:80)
+	at com.intellij.openapi.application.rw.InternalReadAction.access$readLoop(InternalReadAction.kt:17)
+	at com.intellij.openapi.application.rw.InternalReadAction$runReadAction$7.invokeSuspend(InternalReadAction.kt:59)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+2025-08-12 16:43:22,667 [  11534]   WARN - #com.android.tools.idea.preview.find.UastAnnotationAttributesProvider - Resolution of fontScale attempted while index not ready
+com.intellij.openapi.project.IndexNotReadyException: Please change caller according to com.intellij.openapi.project.IndexNotReadyException documentation. Dumb mode start trace is in attachment.
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:69)
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:65)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:67)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:48)
+	at org.jetbrains.kotlin.analysis.api.fir.KaFirSessionProvider.beforeEnteringAnalysis(KaFirSessionProvider.kt:127)
+	at org.jetbrains.uast.kotlin.FirKotlinUastResolveProviderService.findDefaultValueForAnnotationAttribute(FirKotlinUastResolveProviderService.kt:1020)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeDefaultValue(KotlinUAnnotation.kt:56)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeValue(KotlinUAnnotation.kt:45)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getAttributeValue(UastAnnotationAttributesProvider.kt:35)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getFloatAttribute(UastAnnotationAttributesProvider.kt:52)
+	at com.android.tools.preview.ComposePreviewConfigurationKt.attributesToConfiguration(ComposePreviewConfiguration.kt:46)
+	at com.android.tools.preview.ComposePreviewElementConstructionKt.previewAnnotationToPreviewElement(ComposePreviewElementConstruction.kt:87)
+	at com.android.tools.idea.compose.preview.PreviewElementFinderUtilsKt.toPreviewElement$lambda$8(PreviewElementFinderUtils.kt:228)
+	at com.intellij.openapi.application.rw.InternalReadAction.insideReadAction(InternalReadAction.kt:120)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable$lambda$6(InternalReadAction.kt:110)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2$lambda$1(cancellableReadAction.kt:32)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction$lambda$11(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1064)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2(cancellableReadAction.kt:30)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtilService.runActionAndCancelBeforeWrite(ProgressIndicatorUtilService.java:73)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtils.runActionAndCancelBeforeWrite(ProgressIndicatorUtils.java:152)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal(cancellableReadAction.kt:28)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable(InternalReadAction.kt:109)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadAction(InternalReadAction.kt:93)
+	at com.intellij.openapi.application.rw.InternalReadAction.readLoop(InternalReadAction.kt:80)
+	at com.intellij.openapi.application.rw.InternalReadAction.access$readLoop(InternalReadAction.kt:17)
+	at com.intellij.openapi.application.rw.InternalReadAction$runReadAction$7.invokeSuspend(InternalReadAction.kt:59)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+2025-08-12 16:43:22,675 [  11542]   WARN - #com.android.tools.idea.preview.find.UastAnnotationAttributesProvider - Resolution of uiMode attempted while index not ready
+com.intellij.openapi.project.IndexNotReadyException: Please change caller according to com.intellij.openapi.project.IndexNotReadyException documentation. Dumb mode start trace is in attachment.
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:69)
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:65)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:67)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:48)
+	at org.jetbrains.kotlin.analysis.api.fir.KaFirSessionProvider.beforeEnteringAnalysis(KaFirSessionProvider.kt:127)
+	at org.jetbrains.uast.kotlin.FirKotlinUastResolveProviderService.findDefaultValueForAnnotationAttribute(FirKotlinUastResolveProviderService.kt:1020)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeDefaultValue(KotlinUAnnotation.kt:56)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeValue(KotlinUAnnotation.kt:45)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getAttributeValue(UastAnnotationAttributesProvider.kt:35)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getIntAttribute(UastAnnotationAttributesProvider.kt:44)
+	at com.android.tools.preview.ComposePreviewConfigurationKt.attributesToConfiguration(ComposePreviewConfiguration.kt:47)
+	at com.android.tools.preview.ComposePreviewElementConstructionKt.previewAnnotationToPreviewElement(ComposePreviewElementConstruction.kt:87)
+	at com.android.tools.idea.compose.preview.PreviewElementFinderUtilsKt.toPreviewElement$lambda$8(PreviewElementFinderUtils.kt:228)
+	at com.intellij.openapi.application.rw.InternalReadAction.insideReadAction(InternalReadAction.kt:120)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable$lambda$6(InternalReadAction.kt:110)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2$lambda$1(cancellableReadAction.kt:32)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction$lambda$11(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1064)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2(cancellableReadAction.kt:30)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtilService.runActionAndCancelBeforeWrite(ProgressIndicatorUtilService.java:73)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtils.runActionAndCancelBeforeWrite(ProgressIndicatorUtils.java:152)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal(cancellableReadAction.kt:28)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable(InternalReadAction.kt:109)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadAction(InternalReadAction.kt:93)
+	at com.intellij.openapi.application.rw.InternalReadAction.readLoop(InternalReadAction.kt:80)
+	at com.intellij.openapi.application.rw.InternalReadAction.access$readLoop(InternalReadAction.kt:17)
+	at com.intellij.openapi.application.rw.InternalReadAction$runReadAction$7.invokeSuspend(InternalReadAction.kt:59)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+2025-08-12 16:43:22,684 [  11551]   WARN - #com.android.tools.idea.preview.find.UastAnnotationAttributesProvider - Resolution of device attempted while index not ready
+com.intellij.openapi.project.IndexNotReadyException: Please change caller according to com.intellij.openapi.project.IndexNotReadyException documentation. Dumb mode start trace is in attachment.
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:69)
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:65)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:67)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:48)
+	at org.jetbrains.kotlin.analysis.api.fir.KaFirSessionProvider.beforeEnteringAnalysis(KaFirSessionProvider.kt:127)
+	at org.jetbrains.uast.kotlin.FirKotlinUastResolveProviderService.findDefaultValueForAnnotationAttribute(FirKotlinUastResolveProviderService.kt:1020)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeDefaultValue(KotlinUAnnotation.kt:56)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeValue(KotlinUAnnotation.kt:45)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getAttributeValue(UastAnnotationAttributesProvider.kt:35)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getStringAttribute(UastAnnotationAttributesProvider.kt:48)
+	at com.android.tools.preview.ComposePreviewConfigurationKt.attributesToConfiguration(ComposePreviewConfiguration.kt:48)
+	at com.android.tools.preview.ComposePreviewElementConstructionKt.previewAnnotationToPreviewElement(ComposePreviewElementConstruction.kt:87)
+	at com.android.tools.idea.compose.preview.PreviewElementFinderUtilsKt.toPreviewElement$lambda$8(PreviewElementFinderUtils.kt:228)
+	at com.intellij.openapi.application.rw.InternalReadAction.insideReadAction(InternalReadAction.kt:120)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable$lambda$6(InternalReadAction.kt:110)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2$lambda$1(cancellableReadAction.kt:32)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction$lambda$11(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1064)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2(cancellableReadAction.kt:30)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtilService.runActionAndCancelBeforeWrite(ProgressIndicatorUtilService.java:73)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtils.runActionAndCancelBeforeWrite(ProgressIndicatorUtils.java:152)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal(cancellableReadAction.kt:28)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable(InternalReadAction.kt:109)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadAction(InternalReadAction.kt:93)
+	at com.intellij.openapi.application.rw.InternalReadAction.readLoop(InternalReadAction.kt:80)
+	at com.intellij.openapi.application.rw.InternalReadAction.access$readLoop(InternalReadAction.kt:17)
+	at com.intellij.openapi.application.rw.InternalReadAction$runReadAction$7.invokeSuspend(InternalReadAction.kt:59)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+2025-08-12 16:43:22,689 [  11556]   WARN - #com.android.tools.idea.preview.find.UastAnnotationAttributesProvider - Resolution of locale attempted while index not ready
+com.intellij.openapi.project.IndexNotReadyException: Please change caller according to com.intellij.openapi.project.IndexNotReadyException documentation. Dumb mode start trace is in attachment.
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:69)
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:65)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:67)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:48)
+	at org.jetbrains.kotlin.analysis.api.fir.KaFirSessionProvider.beforeEnteringAnalysis(KaFirSessionProvider.kt:127)
+	at org.jetbrains.uast.kotlin.FirKotlinUastResolveProviderService.findDefaultValueForAnnotationAttribute(FirKotlinUastResolveProviderService.kt:1020)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeDefaultValue(KotlinUAnnotation.kt:56)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeValue(KotlinUAnnotation.kt:45)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getAttributeValue(UastAnnotationAttributesProvider.kt:35)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getStringAttribute(UastAnnotationAttributesProvider.kt:48)
+	at com.android.tools.preview.ComposePreviewConfigurationKt.attributesToConfiguration(ComposePreviewConfiguration.kt:49)
+	at com.android.tools.preview.ComposePreviewElementConstructionKt.previewAnnotationToPreviewElement(ComposePreviewElementConstruction.kt:87)
+	at com.android.tools.idea.compose.preview.PreviewElementFinderUtilsKt.toPreviewElement$lambda$8(PreviewElementFinderUtils.kt:228)
+	at com.intellij.openapi.application.rw.InternalReadAction.insideReadAction(InternalReadAction.kt:120)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable$lambda$6(InternalReadAction.kt:110)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2$lambda$1(cancellableReadAction.kt:32)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction$lambda$11(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1064)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2(cancellableReadAction.kt:30)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtilService.runActionAndCancelBeforeWrite(ProgressIndicatorUtilService.java:73)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtils.runActionAndCancelBeforeWrite(ProgressIndicatorUtils.java:152)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal(cancellableReadAction.kt:28)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable(InternalReadAction.kt:109)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadAction(InternalReadAction.kt:93)
+	at com.intellij.openapi.application.rw.InternalReadAction.readLoop(InternalReadAction.kt:80)
+	at com.intellij.openapi.application.rw.InternalReadAction.access$readLoop(InternalReadAction.kt:17)
+	at com.intellij.openapi.application.rw.InternalReadAction$runReadAction$7.invokeSuspend(InternalReadAction.kt:59)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+2025-08-12 16:43:22,690 [  11557]   WARN - #com.android.tools.idea.preview.find.UastAnnotationAttributesProvider - Resolution of wallpaper attempted while index not ready
+com.intellij.openapi.project.IndexNotReadyException: Please change caller according to com.intellij.openapi.project.IndexNotReadyException documentation. Dumb mode start trace is in attachment.
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:69)
+	at com.intellij.openapi.project.IndexNotReadyException.create(IndexNotReadyException.java:65)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:67)
+	at org.jetbrains.kotlin.analysis.api.impl.base.sessions.KaBaseSessionProvider.beforeEnteringAnalysis(KaBaseSessionProvider.kt:48)
+	at org.jetbrains.kotlin.analysis.api.fir.KaFirSessionProvider.beforeEnteringAnalysis(KaFirSessionProvider.kt:127)
+	at org.jetbrains.uast.kotlin.FirKotlinUastResolveProviderService.findDefaultValueForAnnotationAttribute(FirKotlinUastResolveProviderService.kt:1020)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeDefaultValue(KotlinUAnnotation.kt:56)
+	at org.jetbrains.uast.kotlin.KotlinUAnnotationBase.findAttributeValue(KotlinUAnnotation.kt:45)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getAttributeValue(UastAnnotationAttributesProvider.kt:35)
+	at com.android.tools.idea.preview.find.UastAnnotationAttributesProvider.getIntAttribute(UastAnnotationAttributesProvider.kt:44)
+	at com.android.tools.preview.ComposePreviewConfigurationKt.attributesToConfiguration(ComposePreviewConfiguration.kt:50)
+	at com.android.tools.preview.ComposePreviewElementConstructionKt.previewAnnotationToPreviewElement(ComposePreviewElementConstruction.kt:87)
+	at com.android.tools.idea.compose.preview.PreviewElementFinderUtilsKt.toPreviewElement$lambda$8(PreviewElementFinderUtils.kt:228)
+	at com.intellij.openapi.application.rw.InternalReadAction.insideReadAction(InternalReadAction.kt:120)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable$lambda$6(InternalReadAction.kt:110)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2$lambda$1(cancellableReadAction.kt:32)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction$lambda$11(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.tryRunReadAction(AnyThreadWriteThreadingSupport.kt:522)
+	at com.intellij.openapi.application.impl.ApplicationImpl.tryRunReadAction(ApplicationImpl.java:1064)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal$lambda$3$lambda$2(cancellableReadAction.kt:30)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtilService.runActionAndCancelBeforeWrite(ProgressIndicatorUtilService.java:73)
+	at com.intellij.openapi.progress.util.ProgressIndicatorUtils.runActionAndCancelBeforeWrite(ProgressIndicatorUtils.java:152)
+	at com.intellij.openapi.application.rw.CancellableReadActionKt.cancellableReadActionInternal(cancellableReadAction.kt:28)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadCancellable(InternalReadAction.kt:109)
+	at com.intellij.openapi.application.rw.InternalReadAction.tryReadAction(InternalReadAction.kt:93)
+	at com.intellij.openapi.application.rw.InternalReadAction.readLoop(InternalReadAction.kt:80)
+	at com.intellij.openapi.application.rw.InternalReadAction.access$readLoop(InternalReadAction.kt:17)
+	at com.intellij.openapi.application.rw.InternalReadAction$runReadAction$7.invokeSuspend(InternalReadAction.kt:59)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+2025-08-12 16:44:24,748 [  73615]   WARN - #com.android.tools.idea.rendering.ConfigurationMatcher - 'default' is not a best match for any device/locale combination for file:///home/alma/AndroidStudioProjects/MyApplication/app/src/main/AndroidManifest.xml.
+Displaying it with
+  , , , , Left To Right, sw412dp, w412dp, h732dp, Normal Screen, Short screen aspect ratio, Not Round screen, , , Portrait Orientation, Normal, Day time, 420dpi, Finger-based touchscreen, Soft keyboard, No keyboard, Hidden navigation, No navigation, Screen resolution 1920x1080, API Level 36
+which is compatible, but will actually be displayed with another more specific version of the layout.
+2025-08-12 16:44:25,498 [  74365]   WARN - #o.j.a.u.LayoutLibraryLoader - SystemFonts: Loading font config from /opt/android-studio/plugins/design-tools/resources/layoutlib/data/fonts/fonts.xml
+2025-08-12 16:44:25,530 [  74397]   WARN - #o.j.a.u.LayoutLibraryLoader - SystemFonts: Loading font config from /opt/android-studio/plugins/design-tools/resources/layoutlib/data/fonts/font_fallback.xml
+2025-08-12 16:44:25,619 [  74486]   WARN - #o.j.a.u.LayoutLibraryLoader - studio: Unable to find pattern file or unable to map it for am
+2025-08-12 16:45:18,509 [ 127376]   WARN - #c.i.i.a.CopyTBXReferenceAction - Cannot find TBX tool for IDE: AndroidStudio
+2025-08-12 16:47:03,659 [ 232526]   WARN - #c.i.o.o.e.ConfigurableExtensionPointUtil - ignore deprecated groupId: language for id: preferences.language.Kotlin.scripting
+2025-08-12 16:47:03,671 [ 232538]   WARN - #c.i.o.o.e.ConfigurableExtensionPointUtil - use other group instead of unexpected one: testing.instrumented.configuration
+2025-08-12 16:47:03,671 [ 232538]   WARN - #c.i.o.o.e.ConfigurableExtensionPointUtil - Use <groupConfigurable> to specify custom configurable group: other
+2025-08-12 16:47:03,672 [ 232539]   WARN - #c.i.o.o.e.ConfigurableExtensionPointUtil - use other group instead of unexpected one: project.propCompiler
+2025-08-12 16:47:19,593 [ 248460]   WARN - #com.github.weisj.jsvg.parser.NodeMap - unsupported xmpmeta
+2025-08-12 16:47:19,664 [ 248531]   WARN - #c.i.i.p.n.PluginLogo - Cannot load plugin icon (file=/home/alma/.cache/Google/AndroidStudio2025.1.1/plugins/imageCache/com.github.nayunjae.wantedandroidstudioplugin.svg)
+2025-08-12 16:49:15,863 [ 364730]   WARN - #com.github.weisj.jsvg.parser.NodeMap - unsupported RDF
+2025-08-12 16:49:15,864 [ 364731]   WARN - #com.github.weisj.jsvg.parser.NodeMap - unsupported RDF
+2025-08-12 16:49:15,865 [ 364732]   WARN - #com.github.weisj.jsvg.parser.NodeMap - unsupported namedview
+2025-08-12 16:49:15,865 [ 364732]   WARN - #com.github.weisj.jsvg.parser.NodeMap - unsupported namedview
+2025-08-12 16:49:39,807 [ 388674]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ViewToolbarActionsGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,817 [ 388684]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.MainMenu.FileActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,824 [ 388691]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Vcs.Shelf.Operations.ContextMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,825 [ 388692]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Vcs.Shelf.ChangesBrowser.ContextMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,825 [ 388692]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Frontend.ChangesView.GroupBy' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,826 [ 388693]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Vcs.Log.HighlightersActionGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,836 [ 388703]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.BuildTree.AdditionalActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,837 [ 388704]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.StartCallstackSample' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,837 [ 388704]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'StreamingToolbarVirtualDevice' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,837 [ 388704]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'android.streaming.xr.passthrough.group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,837 [ 388704]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Logcat.PopupActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,837 [ 388704]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.SelectJavaKotlinAllocationsTask' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,837 [ 388704]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'AndroidToolsGroupExtension' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,837 [ 388704]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Groovy.NewScript' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,837 [ 388704]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.SelectSystemTraceTask' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,838 [ 388705]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ExternalSystem.RefreshAllProjects' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,838 [ 388705]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.ProfilerSelectProcess' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,838 [ 388705]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'NewHtmlFile' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,838 [ 388705]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.OpenProfilersPastRecordingsTab' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,840 [ 388707]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'WhatsNewAction' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,840 [ 388707]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.SetRecordingTypeToSampling' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,840 [ 388707]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CompileDirty' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,841 [ 388708]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.ProfilerExportRecording' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,841 [ 388708]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.SelectHeapDumpTask' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,841 [ 388708]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ExternalSystem.SelectProjectDataToImport' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,841 [ 388708]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ResourceExplorer' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,841 [ 388708]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'AddFrameworkSupport' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,841 [ 388708]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Gradle.ImportExternalProject' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,841 [ 388708]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Groovy.CheckResources.Make' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,841 [ 388708]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.SetHideNewTaskPromptToTrue' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,841 [ 388708]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'android.streaming.xr.recenter.group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,841 [ 388708]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'RebuildCleanProject' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,841 [ 388708]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.ProfilerSelectDevice' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,842 [ 388709]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'android.device.reservation.extend.half.hour' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,842 [ 388709]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.StartSystemTrace' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,842 [ 388709]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.StartProfilerTask' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,842 [ 388709]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'android.streaming.backup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,842 [ 388709]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.StopProfilerTask' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,843 [ 388710]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.SetProfilingStartingPointToNow' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,843 [ 388710]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.DeviceManager.TypeSpecificActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,843 [ 388710]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Compile' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,843 [ 388710]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Groovy.CheckResources' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,843 [ 388710]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.Diagnostics' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,843 [ 388710]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.StopProfilingSession' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,843 [ 388710]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Hotswap' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,843 [ 388710]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ExternalSystem.DetachProject' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,843 [ 388710]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.SelectLiveViewTask' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,843 [ 388710]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.StartNativeAllocations' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,844 [ 388711]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.StopCpuCapture' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,844 [ 388711]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.DeviceManager2' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,844 [ 388711]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ToggleLayoutInspectorActionGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,844 [ 388711]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'android.streaming.xr.input.mode.group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,844 [ 388711]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'InToolbarContextMenuVirtualDevice' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,844 [ 388711]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.DeployActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,846 [ 388713]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'AndroidDeviceManagerPlaceholder' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,847 [ 388714]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'MakeTypeSelectionGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,847 [ 388714]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'GenerateModuleDescriptors' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,847 [ 388714]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.SelectCallstackSampleTask' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,847 [ 388714]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.SelectJavaKotlinMethodRecording' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,847 [ 388714]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'StreamingToolbarSecondary' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,847 [ 388714]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Library.Properties' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,848 [ 388715]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ExternalSystem.AttachProject' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,848 [ 388715]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.NavBarToolBar' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,848 [ 388715]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.StartHeapDump' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,848 [ 388715]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'android.device.reservation.extend.status' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,848 [ 388715]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'android.device.reservation.extend.quarter.hour' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,848 [ 388715]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'android.emulator.wear.health.services' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,849 [ 388716]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'android.streaming.input.mode.group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,849 [ 388716]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Build' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,849 [ 388716]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.SelectLastRecordingFromRecordingList' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,849 [ 388716]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.StopJavaKotlinAllocationsTask' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,849 [ 388716]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in '<anonymous-group-7>' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,849 [ 388716]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in '<anonymous-group-8>' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,849 [ 388716]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'NewPackageInfo' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,849 [ 388716]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ContextMenuOnlyPhysicalDevice' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,849 [ 388716]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Images.ShowThumbnails' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,849 [ 388716]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.SelectNativeAllocationsTask' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,850 [ 388717]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ContextMenuOnlyVirtualDevice' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,850 [ 388717]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.AdbSettings' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,850 [ 388717]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'InToolbarContextMenuPhysicalDevice' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,851 [ 388718]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'BuildArtifact' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,851 [ 388718]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'android.streaming.xr.navigation.group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,851 [ 388718]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'StreamingToolbarPhysicalDevice' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,851 [ 388718]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CompileProject' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,851 [ 388718]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'StreamingContextMenuVirtualDevice' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,851 [ 388718]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.StopNativeAllocations' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,851 [ 388718]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'AndroidToolbarMakeGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,851 [ 388718]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'StreamingContextMenuPhysicalDevice' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,851 [ 388718]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Streaming' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,851 [ 388718]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CompileFile' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,851 [ 388718]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'SaveFileAsTemplate' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,852 [ 388719]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Adtui.ZoomActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,852 [ 388719]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Groovy.CheckResources.Rebuild' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,852 [ 388719]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.SetProfilingStartingPointToProcessStart' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,852 [ 388719]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.MainToolBarActionGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,852 [ 388719]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Groovy.NewClass' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,854 [ 388721]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.Designer.IssuePanel.ToolbarActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,854 [ 388721]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.Designer.CommonActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,854 [ 388721]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.Designer.ToolsActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,855 [ 388722]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.Designer.ReRunUiCheckModeAction' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,855 [ 388722]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.Designer.IssuePanel.TreePopup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,856 [ 388723]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CPP.NewGroup.After' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,856 [ 388723]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CPP.ProjectView.After' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,856 [ 388723]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ExternalCppProject' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,856 [ 388723]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Lang.ObjC.GenerateMethodsGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,856 [ 388723]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Lang.ObjC.DeclareGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,856 [ 388723]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Lang.ObjC.ConvertGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,856 [ 388723]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Lang.SwitchHeaderSourceGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,856 [ 388723]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Lang.Cpp.GenerateDefinitionsGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,856 [ 388723]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Lang.Cpp.GenerateGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,856 [ 388723]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Lang.ObjC.ExtractClassMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,856 [ 388723]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Lang.IntroduceGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,856 [ 388723]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Lang.ImportsHierarchyMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,856 [ 388723]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Lang.ObjC.RefactoringMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,856 [ 388723]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Lang.ObjC.GenerateGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CidrRefreshTranslatedCode' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Lang.NewGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.Frames.Tree.Popup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.ValueGroup.DataViewSettings.Popup.Wrapper' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.FreezeThreadGroup.Popup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.Settings.FramePresentation.Appender' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.ForkGroup.Popup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.FreezeThreadDebuggingActions.TopToolbar3.Extra' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.ImageViewerPopupActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Util.Diagnostics' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.Registers.Group.Wrapper' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.FramePresentation' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.ImageViewerToolbarSaveActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.FreezeThreadGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,857 [ 388724]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.FreezeThreadDebuggingActionsGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,858 [ 388725]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.RegisterSets.Group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,858 [ 388725]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.ForkDebuggingActions.TopToolbar3.Extra' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,858 [ 388725]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.ForkGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,858 [ 388725]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.ValueGroup.WatchExpressions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,858 [ 388725]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CIDR.Debugger.ValueGroup.DataViewSettings' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,859 [ 388726]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ShowTypeHintSettings' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,861 [ 388728]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.Designer.GenerateComposeSampleDataAction' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,864 [ 388731]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'sml.studiobot.ask.android.group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,865 [ 388732]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'AskStudioBotAction' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,868 [ 388735]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'sml.TestScenarioGeneration' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,870 [ 388737]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'sml.studiobot.ask.core.group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,871 [ 388738]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Experimental.Branch.Popup.Actions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,874 [ 388741]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.BranchOperationGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,875 [ 388742]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Stage.Toolbar' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,875 [ 388742]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Hosting.Copy.Link.Group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,876 [ 388743]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Log.ContextMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,876 [ 388743]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Stage.Local.File.Menu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,876 [ 388743]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.ChangesView.Conflicts' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,877 [ 388744]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Stage.Tree.Menu.LocalHistory' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,877 [ 388744]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Hosting.Open.In.Browser.Group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,878 [ 388745]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Branch' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,879 [ 388746]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'GitMainToolbarQuickActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,879 [ 388746]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'GitMergeRebaseWidgetGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,880 [ 388747]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Vcs.ToolbarWidget.CreateRepository' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,880 [ 388747]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'git.branches.popup.filter.by.separator' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,880 [ 388747]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.FileHistory.ContextMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,881 [ 388748]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Ongoing.Rebase.Actions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,881 [ 388748]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'GitRepositoryActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,883 [ 388750]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Stash.ChangesBrowser.ContextMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,884 [ 388751]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Stage.Tree.Menu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,884 [ 388751]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Branches.Popup.SpeedSearch' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,885 [ 388752]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Log.ContextMenu.CheckoutBrowse' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,885 [ 388752]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.LogContextMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,885 [ 388752]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.FileActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,885 [ 388752]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Log.Toolbar' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,885 [ 388752]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Vcs.ToolbarWidget.CreateRepository.LocalHistory' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,885 [ 388752]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Stash.Operations.ContextMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,886 [ 388753]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.MainMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,886 [ 388753]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Git.Branches.List' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,886 [ 388753]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'MainToolbarQuickActions.VCS' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,889 [ 388756]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Github.PullRequest.ToolWindow.List.Popup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,889 [ 388756]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Github.PullRequest.Changes.Toolbar' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,889 [ 388756]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Github.PullRequest.Details.Popup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,889 [ 388756]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'GitHub.Pull.Request.Create.Title.Actions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,890 [ 388757]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Github.PullRequest.Timeline.Popup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,890 [ 388757]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Github.PullRequest.Changes.Popup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,890 [ 388757]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Github.Pull.Request.Branch.Popup.Actions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,892 [ 388759]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'GitLab.Merge.Request.Details.Popup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,892 [ 388759]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'GitLab.Merge.Request.Changes.Popup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,892 [ 388759]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'GitLab.Merge.Request.Timeline.Popup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,892 [ 388759]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'GitLab.Merge.Request.Timeline.Error.Popup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,893 [ 388760]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'GitLab.Merge.Request.List.Actions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,893 [ 388760]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'GitLab.Merge.Request.Review.Editor.Branch.Popup.Actions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,893 [ 388760]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'GitLab.Merge.Request.Create.Title.Actions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,894 [ 388761]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Gradle.View.ActionsToolbar.RightPanel' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,894 [ 388761]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Gradle.View.ActionsToolbar.CenterPanel' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,894 [ 388761]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Gradle.View.ActionsToolbar.LeftPanel' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,894 [ 388761]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Gradle.View.ModuleMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,894 [ 388761]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Gradle.View.ProjectMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,895 [ 388762]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Gradle.View.DependencyMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,895 [ 388762]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Gradle.GenerateGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,895 [ 388762]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'GenerateGradleDslGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,898 [ 388765]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'GroovyGenerateGroup1' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,898 [ 388765]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Images.ScientificGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,898 [ 388765]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Images.ThumbnailViewActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,898 [ 388765]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Images.ImageViewActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,898 [ 388765]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Images.ScientificEditorToolbar' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,899 [ 388766]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Images.ImageOperationsGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,899 [ 388766]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Images.EditorToolbar' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,899 [ 388766]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Images.ThumbnailsPopupMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,899 [ 388766]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Images.ThumbnailsToolbar' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,899 [ 388766]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Images.EditorPopupMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,899 [ 388766]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'junit.exclude.group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,899 [ 388766]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'junit.add.to.pattern.group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,900 [ 388767]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'RefactoringMenu4' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,900 [ 388767]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'WelcomeScreen.Documentation.IDEA' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,900 [ 388767]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Java.ImportFrom.Group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,900 [ 388767]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'EditorTabCompileGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,900 [ 388767]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'EditorPopupMenuAnalyze' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,901 [ 388768]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'JavaGenerateGroup2' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,901 [ 388768]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'JavaGenerateGroup1' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,901 [ 388768]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CompilerErrorViewPopupMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,901 [ 388768]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'JavaMethodHierarchyPopupMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,901 [ 388768]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'InspectCodeActionInPopupMenus' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,901 [ 388768]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'RefactoringMenuRenameFile' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,901 [ 388768]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Debugger.Representation' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,901 [ 388768]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'JavaNewProjectGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,901 [ 388768]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Debugger.ThreadsPanelPopup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,901 [ 388768]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'StructureViewCompileGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,901 [ 388768]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'JavaDebuggerActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,902 [ 388769]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ShowPackageDepsGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,902 [ 388769]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'EditorPopupMenuDebugJava' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,902 [ 388769]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'MemoryView.ClassesPopupActionGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,902 [ 388769]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Java.BuildMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,902 [ 388769]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'NewJavaSpecialFile' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,902 [ 388769]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'CommanderPopupMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,902 [ 388769]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'MigrationMenu1' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,902 [ 388769]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'JavaCompileGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,903 [ 388770]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'JavaNewProjectOrModuleGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,903 [ 388770]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'idea.java.decompiler.action.group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,904 [ 388771]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'MarkGeneratedSourceRootGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,905 [ 388772]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'MarkSourceRootGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,905 [ 388772]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Java.MarkRootGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,905 [ 388772]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'WelcomeScreen.QuickStart.IDEA' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,906 [ 388773]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'KotlinGenerateGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,906 [ 388773]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ConvertJavaToKotlinGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,906 [ 388773]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Kotlin.XDebugger.Actions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,907 [ 388774]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Markdown.TableActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,907 [ 388774]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Markdown.PreviewGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,907 [ 388774]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Markdown.EditorContextMenuGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,907 [ 388774]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Markdown.InsertGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,907 [ 388774]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Markdown.TableColumnActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,907 [ 388774]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Markdown.TableRowActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,907 [ 388774]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Hg.MQ.Unapplied' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,907 [ 388774]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Mq.Patches.Toolbar' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,908 [ 388775]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Mq.Patches.ContextMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,908 [ 388775]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Hg.Log.ContextMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,908 [ 388775]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'StartProfileGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,908 [ 388775]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'IndexingDiagnosticGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,908 [ 388775]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'DiagnosticGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,908 [ 388775]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ShGenerateGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,908 [ 388775]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Svn.WorkingCopiesView.Toolbar' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,908 [ 388775]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'SubversionGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,909 [ 388776]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'SubversionUpdateActionGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,909 [ 388776]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'task.actions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,909 [ 388776]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'tasks.group' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,909 [ 388776]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'working.context' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,910 [ 388777]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Terminal.ToolWindowActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,911 [ 388778]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Terminal.OutputContextMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,912 [ 388779]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Terminal.ReworkedTerminalContextMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,912 [ 388779]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Terminal.PromptToolbar' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,912 [ 388779]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'TerminalToolwindowActionGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,912 [ 388779]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Terminal.PromptContextMenu' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,913 [ 388780]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'excludeGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,913 [ 388780]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'addToTempGroup' template presentation. Showing its action-id instead
+2025-08-12 16:49:39,913 [ 388780]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Dev.PsiViewerActions' template presentation. Showing its action-id instead
+2025-08-12 16:49:40,399 [ 389266]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'DuplicatesForm.SendToRight' template presentation. Showing its action-id instead
+2025-08-12 16:49:40,399 [ 389266]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ActivateUnitTestsToolWindow' template presentation. Showing its action-id instead
+2025-08-12 16:49:40,401 [ 389268]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'DuplicatesForm.SendToLeft' template presentation. Showing its action-id instead
+2025-08-12 16:49:40,401 [ 389268]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ValidateXml' template presentation. Showing its action-id instead
+2025-08-12 16:49:40,404 [ 389271]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ActivateNuGetToolWindow' template presentation. Showing its action-id instead
+2025-08-12 16:49:40,405 [ 389272]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'AIAssistant.Chat.AIPopupChat' template presentation. Showing its action-id instead
+2025-08-12 16:49:40,412 [ 389279]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'ActivateFavoritesToolWindow' template presentation. Showing its action-id instead
+2025-08-12 16:49:40,412 [ 389279]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Android.CleanRun' template presentation. Showing its action-id instead
+2025-08-12 16:49:40,414 [ 389281]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'SettingsSyncSeparator' template presentation. Showing its action-id instead
+2025-08-12 16:49:40,414 [ 389281]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'SwitchHeaderSource' template presentation. Showing its action-id instead
+2025-08-12 16:49:40,415 [ 389282]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'InactiveStopActionPlaceholder' template presentation. Showing its action-id instead
+2025-08-12 16:49:45,130 [ 393997]   WARN - #c.i.i.u.UIThemeBean - Unknown field: CombinedDiff
+2025-08-12 16:49:45,130 [ 393997]   WARN - #c.i.i.u.UIThemeBean - Unknown field: BlockBorder
+2025-08-12 16:49:45,975 [ 394842]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'XDebugger.Code.Toolbar' template presentation. Showing its action-id instead
+2025-08-12 16:49:45,977 [ 394844]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Vcs.Operations.Popup.VcsAware' template presentation. Showing its action-id instead
+2025-08-12 16:49:45,977 [ 394844]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Vcs.Operations.Popup.VcsNameSeparator' template presentation. Showing its action-id instead
+2025-08-12 16:49:45,978 [ 394845]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Vcs.Operations.Popup.Vcs.Providers' template presentation. Showing its action-id instead
+2025-08-12 16:49:45,978 [ 394845]   WARN - #c.i.o.k.i.u.ActionsTreeUtil - No text in 'Vcs.Operations.Popup.NonVcsAware' template presentation. Showing its action-id instead
+2025-08-12 16:49:49,884 [ 398751]   WARN - #c.i.d.d.GridUtil - No settings for grid {GRID_CELL_EDITOR_HELPER_KEY=com.intellij.database.run.ui.grid.editors.GridCellEditorHelperImpl@32d4c350, GRID_HELPER_KEY=com.intellij.database.datagrid.GridHelperImpl@10db2152, FACTORY_PROVIDER_KEY=com.intellij.database.run.ui.grid.editors.GridCellEditorFactoryImpl@51a73b5e, RENDERER_FACTORIES_KEY=com.intellij.database.run.ui.grid.renderers.GridCellRendererFactories@35c9c81d, FORMATTER_CREATOR_KEY=com.intellij.database.datagrid.FormatterCreatorProvider$$Lambda/0x0000000103e72cb0@211343b7, CONVERSION_GRAPH_KEY=com.intellij.database.data.types.BaseConversionGraph@680b2776}.Make sure DATA_GRID_SETTINGS_KEY set for your grid.TableResultPanel inheritors could use 'configurator' constructor parameter to pass settings
+2025-08-12 16:49:49,944 [ 398811]   WARN - #c.i.d.d.GridUtil - No settings for grid {GRID_CELL_EDITOR_HELPER_KEY=com.intellij.database.run.ui.grid.editors.GridCellEditorHelperImpl@32d4c350, GRID_HELPER_KEY=com.intellij.database.datagrid.GridHelperImpl@10db2152, FACTORY_PROVIDER_KEY=com.intellij.database.run.ui.grid.editors.GridCellEditorFactoryImpl@51a73b5e, RENDERER_FACTORIES_KEY=com.intellij.database.run.ui.grid.renderers.GridCellRendererFactories@35c9c81d, FORMATTER_CREATOR_KEY=com.intellij.database.datagrid.FormatterCreatorProvider$$Lambda/0x0000000103e72cb0@211343b7, CONVERSION_GRAPH_KEY=com.intellij.database.data.types.BaseConversionGraph@680b2776}.Make sure DATA_GRID_SETTINGS_KEY set for your grid.TableResultPanel inheritors could use 'configurator' constructor parameter to pass settings
+2025-08-12 16:49:49,955 [ 398822]   WARN - #c.i.d.d.GridUtil - No settings for grid {GRID_CELL_EDITOR_HELPER_KEY=com.intellij.database.run.ui.grid.editors.GridCellEditorHelperImpl@32d4c350, GRID_HELPER_KEY=com.intellij.database.datagrid.GridHelperImpl@10db2152, FACTORY_PROVIDER_KEY=com.intellij.database.run.ui.grid.editors.GridCellEditorFactoryImpl@51a73b5e, RENDERER_FACTORIES_KEY=com.intellij.database.run.ui.grid.renderers.GridCellRendererFactories@35c9c81d, FORMATTER_CREATOR_KEY=com.intellij.database.datagrid.FormatterCreatorProvider$$Lambda/0x0000000103e72cb0@211343b7, CONVERSION_GRAPH_KEY=com.intellij.database.data.types.BaseConversionGraph@680b2776}.Make sure DATA_GRID_SETTINGS_KEY set for your grid.TableResultPanel inheritors could use 'configurator' constructor parameter to pass settings
+2025-08-12 16:49:50,031 [ 398898]   WARN - #c.i.d.d.GridUtil - No settings for grid {GRID_CELL_EDITOR_HELPER_KEY=com.intellij.database.run.ui.grid.editors.GridCellEditorHelperImpl@32d4c350, GRID_HELPER_KEY=com.intellij.database.datagrid.GridHelperImpl@10db2152, FACTORY_PROVIDER_KEY=com.intellij.database.run.ui.grid.editors.GridCellEditorFactoryImpl@51a73b5e, RENDERER_FACTORIES_KEY=com.intellij.database.run.ui.grid.renderers.GridCellRendererFactories@35c9c81d, FORMATTER_CREATOR_KEY=com.intellij.database.datagrid.FormatterCreatorProvider$$Lambda/0x0000000103e72cb0@211343b7, CONVERSION_GRAPH_KEY=com.intellij.database.data.types.BaseConversionGraph@680b2776}.Make sure DATA_GRID_SETTINGS_KEY set for your grid.TableResultPanel inheritors could use 'configurator' constructor parameter to pass settings
+2025-08-12 16:49:50,031 [ 398898]   WARN - #c.i.d.d.GridUtil - No settings for grid {DETECT_TEXT_IN_BINARY_COLUMNS=true, GRID_CELL_EDITOR_HELPER_KEY=com.intellij.database.run.ui.grid.editors.GridCellEditorHelperImpl@32d4c350, GRID_HELPER_KEY=com.intellij.database.datagrid.GridHelperImpl@10db2152, FACTORY_PROVIDER_KEY=com.intellij.database.run.ui.grid.editors.GridCellEditorFactoryImpl@51a73b5e, RENDERER_FACTORIES_KEY=com.intellij.database.run.ui.grid.renderers.GridCellRendererFactories@35c9c81d, FORMATTER_CREATOR_KEY=com.intellij.database.datagrid.FormatterCreatorProvider$$Lambda/0x0000000103e72cb0@211343b7, CONVERSION_GRAPH_KEY=com.intellij.database.data.types.BaseConversionGraph@680b2776}.Make sure DATA_GRID_SETTINGS_KEY set for your grid.TableResultPanel inheritors could use 'configurator' constructor parameter to pass settings
+2025-08-12 16:49:50,032 [ 398899]   WARN - #c.i.d.d.GridUtil - No settings for grid {DETECT_TEXT_IN_BINARY_COLUMNS=true, DETECT_TEXT_IN_BINARY_COLUMNS=true, GRID_CELL_EDITOR_HELPER_KEY=com.intellij.database.run.ui.grid.editors.GridCellEditorHelperImpl@32d4c350, GRID_HELPER_KEY=com.intellij.database.datagrid.GridHelperImpl@10db2152, FACTORY_PROVIDER_KEY=com.intellij.database.run.ui.grid.editors.GridCellEditorFactoryImpl@51a73b5e, RENDERER_FACTORIES_KEY=com.intellij.database.run.ui.grid.renderers.GridCellRendererFactories@35c9c81d, FORMATTER_CREATOR_KEY=com.intellij.database.datagrid.FormatterCreatorProvider$$Lambda/0x0000000103e72cb0@211343b7, CONVERSION_GRAPH_KEY=com.intellij.database.data.types.BaseConversionGraph@680b2776}.Make sure DATA_GRID_SETTINGS_KEY set for your grid.TableResultPanel inheritors could use 'configurator' constructor parameter to pass settings
+2025-08-12 16:51:40,510 [ 509377]   WARN - #c.i.o.o.e.ConfigurableCardPanel - auto-dispose 'Plugins' id=preferences.pluginManager
+2025-08-12 16:52:08,670 [ 537537]   WARN - #com.android.ddmlib - Failed to start Emulator console for 5554
+2025-08-12 16:57:06,039 [ 834906]   WARN - #c.i.i.a.CopyTBXReferenceAction - Cannot find TBX tool for IDE: AndroidStudio
+2025-08-12 16:57:06,675 [ 835542]   WARN - #c.i.i.a.CopyTBXReferenceAction - Cannot find TBX tool for IDE: AndroidStudio
+2025-08-12 16:57:07,760 [ 836627]   WARN - #c.i.i.a.CopyTBXReferenceAction - Cannot find TBX tool for IDE: AndroidStudio
+2025-08-12 16:57:27,050 [ 855917]   WARN - #c.i.o.o.e.ConfigurableExtensionPointUtil - ignore deprecated groupId: language for id: preferences.language.Kotlin.scripting
+2025-08-12 16:57:27,061 [ 855928]   WARN - #c.i.o.o.e.ConfigurableExtensionPointUtil - use other group instead of unexpected one: testing.instrumented.configuration
+2025-08-12 16:57:27,061 [ 855928]   WARN - #c.i.o.o.e.ConfigurableExtensionPointUtil - Use <groupConfigurable> to specify custom configurable group: other
+2025-08-12 16:57:27,061 [ 855928]   WARN - #c.i.o.o.e.ConfigurableExtensionPointUtil - use other group instead of unexpected one: project.propCompiler
+2025-08-12 16:57:54,494 [ 883361]   WARN - #c.i.i.a.CopyTBXReferenceAction - Cannot find TBX tool for IDE: AndroidStudio
+2025-08-12 17:02:53,519 [1182386]   WARN - #c.i.i.a.CopyTBXReferenceAction - Cannot find TBX tool for IDE: AndroidStudio
+2025-08-12 17:05:23,794 [1332661]   WARN - #c.i.j.l.JavaLibraryModificationTracker - SearchScope.contains(file) would log an error because WorkspaceFileIndex is not yet initialized. Probably JavaLibraryModificationTracker was created too early. See JavaLibraryModificationTracker creation stacktrace: 
+java.lang.Throwable
+	at com.intellij.java.library.JavaLibraryModificationTracker.<init>(JavaLibraryModificationTracker.java:38)
+	at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(Unknown Source)
+	at com.intellij.platform.instanceContainer.instantiation.InstantiateKt.instantiate$lambda$0(instantiate.kt:47)
+	at com.intellij.platform.instanceContainer.instantiation.InstantiateKt.instantiate$lambda$8$lambda$7(instantiate.kt:289)
+	at com.intellij.platform.instanceContainer.instantiation.InstantiateKt.withStoredTemporaryContext(instantiate.kt:306)
+	at com.intellij.platform.instanceContainer.instantiation.InstantiateKt.instantiate(instantiate.kt:288)
+	at com.intellij.platform.instanceContainer.instantiation.InstantiateKt.instantiate(instantiate.kt:40)
+	at com.intellij.serviceContainer.LightServiceInstanceSupport$LightServiceInstanceInitializer.createInstance(LightServiceInstanceSupport.kt:47)
+	at com.intellij.platform.instanceContainer.internal.LazyInstanceHolder$initialize$1$1.invokeSuspend(LazyInstanceHolder.kt:163)
+	at com.intellij.platform.instanceContainer.internal.LazyInstanceHolder$initialize$1$1.invoke(LazyInstanceHolder.kt)
+	at com.intellij.platform.instanceContainer.internal.LazyInstanceHolder$initialize$1$1.invoke(LazyInstanceHolder.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startUndispatchedOrReturn(Undispatched.kt:62)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.withContext(Builders.common.kt:163)
+	at kotlinx.coroutines.BuildersKt.withContext(Unknown Source)
+	at com.intellij.platform.instanceContainer.internal.LazyInstanceHolder$initialize$1.invokeSuspend(LazyInstanceHolder.kt:161)
+	at com.intellij.platform.instanceContainer.internal.LazyInstanceHolder$initialize$1.invoke(LazyInstanceHolder.kt)
+	at com.intellij.platform.instanceContainer.internal.LazyInstanceHolder$initialize$1.invoke(LazyInstanceHolder.kt)
+	at kotlinx.coroutines.intrinsics.UndispatchedKt.startCoroutineUndispatched(Undispatched.kt:27)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:90)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:123)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:52)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at com.intellij.platform.instanceContainer.internal.LazyInstanceHolder.initialize(LazyInstanceHolder.kt:146)
+	at com.intellij.platform.instanceContainer.internal.LazyInstanceHolder.access$initialize(LazyInstanceHolder.kt:14)
+	at com.intellij.platform.instanceContainer.internal.LazyInstanceHolder.tryInitialize(LazyInstanceHolder.kt:136)
+	at com.intellij.platform.instanceContainer.internal.LazyInstanceHolder.getInstance(LazyInstanceHolder.kt:96)
+	at com.intellij.platform.instanceContainer.internal.LazyInstanceHolder.getInstanceInCallerContext$suspendImpl(LazyInstanceHolder.kt:88)
+	at com.intellij.platform.instanceContainer.internal.LazyInstanceHolder.getInstanceInCallerContext(LazyInstanceHolder.kt)
+	at com.intellij.serviceContainer.ComponentManagerImplKt$doGetOrCreateInstanceBlocking$1.invokeSuspend(ComponentManagerImpl.kt:1565)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:277)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:112)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$BuildersKt__BuildersKt(Builders.kt:85)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:53)
+	at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)
+	at com.intellij.serviceContainer.ComponentManagerImplKt.runBlockingInitialization$lambda$10(ComponentManagerImpl.kt:1683)
+	at com.intellij.openapi.progress.ContextKt.prepareThreadContext(context.kt:81)
+	at com.intellij.serviceContainer.ComponentManagerImplKt.runBlockingInitialization(ComponentManagerImpl.kt:1674)
+	at com.intellij.serviceContainer.ComponentManagerImplKt.doGetOrCreateInstanceBlocking(ComponentManagerImpl.kt:1564)
+	at com.intellij.serviceContainer.ComponentManagerImplKt.getOrCreateInstanceBlocking(ComponentManagerImpl.kt:1559)
+	at com.intellij.serviceContainer.ComponentManagerImpl.doGetService(ComponentManagerImpl.kt:752)
+	at com.intellij.serviceContainer.ComponentManagerImpl.getService(ComponentManagerImpl.kt:696)
+	at com.intellij.java.library.JavaLibraryModificationTracker.getInstance(JavaLibraryModificationTracker.java:82)
+	at org.jetbrains.kotlin.idea.base.fir.analysisApiPlatform.FirIdeKotlinModificationTrackerFactory.getLibraryModificationTracker(FirIdeKotlinModificationTrackerFactory.kt:24)
+	at org.jetbrains.kotlin.idea.base.fir.analysisApiPlatform.FirIdeKotlinModificationTrackerFactory.incrementModificationsCount$kotlin_base_fir_analysis_api_platform(FirIdeKotlinModificationTrackerFactory.kt:49)
+	at org.jetbrains.kotlin.idea.base.fir.analysisApiPlatform.FirIdeKotlinGlobalModificationService.incrementModificationTrackers(FirIdeKotlinGlobalModificationService.kt:11)
+	at org.jetbrains.kotlin.analysis.api.platform.modification.KotlinGlobalModificationServiceBase.publishGlobalModuleStateModification(KotlinGlobalModificationServiceBase.kt:21)
+	at org.jetbrains.kotlin.idea.base.fir.analysisApiPlatform.FirIdeModuleStateModificationService$LibraryUpdatesListener.before(FirIdeModuleStateModificationService.kt:120)
+	at com.intellij.util.messages.impl.MessageBusImplKt.invokeMethod(MessageBusImpl.kt:768)
+	at com.intellij.util.messages.impl.MessageBusImplKt.invokeListener(MessageBusImpl.kt:712)
+	at com.intellij.util.messages.impl.MessageBusImplKt.executeOrAddToQueue(MessageBusImpl.kt:533)
+	at com.intellij.util.messages.impl.ToDirectChildrenMessagePublisher.publish$intellij_platform_core(CompositeMessageBus.kt:318)
+	at com.intellij.util.messages.impl.MessagePublisher.invoke(MessageBusImpl.kt:481)
+	at jdk.proxy2/jdk.proxy2.$Proxy258.before(Unknown Source)
+	at com.intellij.openapi.vfs.newvfs.persistent.PersistentFSImpl.lambda$fireBeforeEvents$21(PersistentFSImpl.java:1507)
+	at com.intellij.openapi.vfs.newvfs.persistent.PersistentFSImpl.runSuppressing(PersistentFSImpl.java:1131)
+	at com.intellij.openapi.vfs.newvfs.persistent.PersistentFSImpl.fireBeforeEvents(PersistentFSImpl.java:1506)
+	at com.intellij.openapi.vfs.newvfs.persistent.PersistentFSImpl.lambda$processEvent$12(PersistentFSImpl.java:1112)
+	at com.intellij.openapi.vfs.newvfs.persistent.PersistentFSImpl.runSuppressing(PersistentFSImpl.java:1131)
+	at com.intellij.openapi.vfs.newvfs.persistent.PersistentFSImpl.processEvent(PersistentFSImpl.java:1111)
+	at com.intellij.openapi.vfs.newvfs.persistent.PersistentFSImpl.createChildDirectory(PersistentFSImpl.java:730)
+	at com.intellij.openapi.vfs.newvfs.impl.VirtualFileSystemEntry.createChildDirectory(VirtualFileSystemEntry.java:389)
+	at com.intellij.openapi.vfs.VfsUtil.createDirectoryIfMissing(VfsUtil.java:367)
+	at com.intellij.openapi.vfs.VfsUtil.createDirectoryIfMissing(VfsUtil.java:341)
+	at com.android.tools.idea.gradle.util.PropertiesFiles.lambda$savePropertiesToFile$1(PropertiesFiles.java:68)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWriteAction$lambda$15(AnyThreadWriteThreadingSupport.kt:623)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWriteAction(AnyThreadWriteThreadingSupport.kt:623)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWriteAction(AnyThreadWriteThreadingSupport.kt:617)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:998)
+	at com.intellij.openapi.application.WriteAction.compute(WriteAction.java:95)
+	at com.intellij.openapi.application.WriteAction.lambda$computeAndWait$4(WriteAction.java:148)
+	at com.intellij.openapi.application.WriteThread.lambda$submit$0(WriteThread.java:27)
+	at com.intellij.openapi.application.WriteThread.lambda$submit$1(WriteThread.java:43)
+	at com.intellij.openapi.application.TransactionGuardImpl.runWithWritingAllowed(TransactionGuardImpl.java:240)
+	at com.intellij.openapi.application.TransactionGuardImpl.access$100(TransactionGuardImpl.java:25)
+	at com.intellij.openapi.application.TransactionGuardImpl$1.run(TransactionGuardImpl.java:202)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runIntendedWriteActionOnCurrentThread$lambda$7(AnyThreadWriteThreadingSupport.kt:319)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWriteIntentReadAction$lambda$6(AnyThreadWriteThreadingSupport.kt:274)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWriteIntentReadAction(AnyThreadWriteThreadingSupport.kt:274)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWriteIntentReadAction(AnyThreadWriteThreadingSupport.kt:222)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runIntendedWriteActionOnCurrentThread(AnyThreadWriteThreadingSupport.kt:318)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runIntendedWriteActionOnCurrentThread(ApplicationImpl.java:928)
+	at com.intellij.openapi.application.impl.ApplicationImpl$4.run(ApplicationImpl.java:501)
+	at com.intellij.util.concurrency.ChildContext$runInChildContext$1.invoke(propagation.kt:102)
+	at com.intellij.util.concurrency.ChildContext$runInChildContext$1.invoke(propagation.kt:102)
+	at com.intellij.util.concurrency.ChildContext.runInChildContext(propagation.kt:108)
+	at com.intellij.util.concurrency.ChildContext.runInChildContext(propagation.kt:102)
+	at com.intellij.util.concurrency.ContextRunnable.run(ContextRunnable.java:27)
+	at com.intellij.openapi.application.impl.FlushQueue.runNextEvent(FlushQueue.java:117)
+	at com.intellij.openapi.application.impl.FlushQueue.flushNow(FlushQueue.java:43)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.kt:585)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.kt:482)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent$lambda$12$lambda$11$lambda$10$lambda$9(IdeEventQueue.kt:307)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computePrioritized(CoreProgressManager.java:864)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent$lambda$12$lambda$11$lambda$10(IdeEventQueue.kt:306)
+	at com.intellij.ide.IdeEventQueueKt.performActivity$lambda$3(IdeEventQueue.kt:958)
+	at com.intellij.openapi.application.TransactionGuardImpl.performActivity(TransactionGuardImpl.java:117)
+	at com.intellij.ide.IdeEventQueueKt.performActivity(IdeEventQueue.kt:958)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent$lambda$12(IdeEventQueue.kt:301)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.kt:341)
+	at com.intellij.ide.IdeEventQueue.pumpEventsForHierarchy(IdeEventQueue.kt:622)
+	at com.intellij.openapi.progress.util.ProgressWindow.lambda$startBlocking$4(ProgressWindow.java:225)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runUnlockingIntendedWrite(AnyThreadWriteThreadingSupport.kt:326)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runUnlockingIntendedWrite(ApplicationImpl.java:934)
+	at com.intellij.openapi.progress.util.ProgressWindow.lambda$startBlocking$5(ProgressWindow.java:221)
+	at com.intellij.openapi.progress.util.ProgressWindow.executeInModalContext(ProgressWindow.java:202)
+	at com.intellij.openapi.progress.util.ProgressWindow.startBlocking(ProgressWindow.java:219)
+	at com.intellij.openapi.progress.impl.ProgressRunner.lambda$execFromEDT$7(ProgressRunner.java:319)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptNow(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture.uniAcceptStage(Unknown Source)
+	at java.base/java.util.concurrent.CompletableFuture.thenAccept(Unknown Source)
+	at com.intellij.openapi.progress.impl.ProgressRunner.execFromEDT(ProgressRunner.java:316)
+	at com.intellij.openapi.progress.impl.ProgressRunner.submit(ProgressRunner.java:255)
+	at com.intellij.openapi.progress.impl.ProgressRunner.submitAndGet(ProgressRunner.java:196)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runProcessWithProgressSynchronously(ApplicationImpl.java:462)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.runProcessWithProgressSynchronously(CoreProgressManager.java:598)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.runProcessWithProgressSynchronously(ProgressManagerImpl.java:89)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.run(CoreProgressManager.java:434)
+	at com.intellij.openapi.progress.Task.queue(Task.java:122)
+	at com.android.tools.idea.npw.model.NewProjectModel.multiTemplateRenderer$lambda$0(NewProjectModel.kt:214)
+	at com.android.tools.idea.npw.model.MultiTemplateRenderer.countDown(MultiTemplateRenderer.kt:117)
+	at com.android.tools.idea.npw.model.MultiTemplateRenderer.skipRender(MultiTemplateRenderer.kt:104)
+	at com.android.tools.idea.npw.model.RenderTemplateModel.handleSkipped(RenderTemplateModel.kt:147)
+	at com.android.tools.idea.wizard.model.ModelWizard.handleFinished(ModelWizard.java:420)
+	at com.android.tools.idea.wizard.model.ModelWizard.goForward(ModelWizard.java:342)
+	at com.android.tools.idea.wizard.model.ModelWizardDialog$FinishAction.doAction(ModelWizardDialog.java:363)
+	at com.intellij.openapi.ui.DialogWrapper$DialogWrapperAction.actionPerformed(DialogWrapper.java:1962)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(Unknown Source)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Unknown Source)
+	at java.desktop/java.awt.Component.processMouseEvent(Unknown Source)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.desktop/java.awt.Component.processEvent(Unknown Source)
+	at java.desktop/java.awt.Container.processEvent(Unknown Source)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.Component.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.Component.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue$5.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$5.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.kt:585)
+	at com.intellij.ide.IdeEventQueue.dispatchMouseEvent(IdeEventQueue.kt:530)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent$lambda$16(IdeEventQueue.kt:473)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWriteIntentReadAction$lambda$6(AnyThreadWriteThreadingSupport.kt:274)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWriteIntentReadAction(AnyThreadWriteThreadingSupport.kt:274)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runPreventiveWriteIntentReadAction(AnyThreadWriteThreadingSupport.kt:218)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.kt:473)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent$lambda$12$lambda$11$lambda$10$lambda$9(IdeEventQueue.kt:307)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computePrioritized(CoreProgressManager.java:864)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent$lambda$12$lambda$11$lambda$10(IdeEventQueue.kt:306)
+	at com.intellij.ide.IdeEventQueueKt.performActivity$lambda$3(IdeEventQueue.kt:958)
+	at com.intellij.openapi.application.TransactionGuardImpl.performActivity(TransactionGuardImpl.java:109)
+	at com.intellij.ide.IdeEventQueueKt.performActivity(IdeEventQueue.kt:958)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent$lambda$12(IdeEventQueue.kt:301)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.kt:341)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.WaitDispatchSupport$2.run(Unknown Source)
+	at java.desktop/java.awt.WaitDispatchSupport$4.run(Unknown Source)
+	at java.desktop/java.awt.WaitDispatchSupport$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.desktop/java.awt.WaitDispatchSupport.enter(Unknown Source)
+	at java.desktop/java.awt.Dialog.show(Unknown Source)
+	at com.intellij.openapi.ui.impl.DialogWrapperPeerImpl$MyDialog.show(DialogWrapperPeerImpl.java:871)
+	at com.intellij.openapi.ui.impl.DialogWrapperPeerImpl.show(DialogWrapperPeerImpl.java:458)
+	at com.intellij.openapi.ui.DialogWrapper.doShow(DialogWrapper.java:1815)
+	at com.intellij.openapi.ui.DialogWrapper.show(DialogWrapper.java:1764)
+	at com.android.tools.idea.npw.actions.AndroidNewProjectAction.actionPerformed(AndroidNewProjectAction.kt:55)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.doPerformActionOrShowPopup(ActionUtil.kt:383)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAwareWithCallbacks$lambda$7(ActionUtil.kt:353)
+	at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.performWithActionCallbacks(ActionManagerImpl.kt:1171)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAwareWithCallbacks(ActionUtil.kt:352)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.performAction$lambda$5(ActionMenuItem.kt:273)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.runOnOwnContext(FocusManagerImpl.java:231)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.performAction(ActionMenuItem.kt:265)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem._init_$lambda$0(ActionMenuItem.kt:72)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(Unknown Source)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.fireActionPerformed$lambda$4(ActionMenuItem.kt:103)
+	at com.intellij.openapi.application.TransactionGuardImpl.performActivity(TransactionGuardImpl.java:109)
+	at com.intellij.openapi.application.TransactionGuardImpl.performUserActivity(TransactionGuardImpl.java:98)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.fireActionPerformed(ActionMenuItem.kt:102)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI.doClick(BegMenuItemUI.java:521)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI$MyMouseInputHandler.mouseReleased(BegMenuItemUI.java:554)
+	at java.desktop/java.awt.Component.processMouseEvent(Unknown Source)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(Unknown Source)
+	at java.desktop/java.awt.Component.processEvent(Unknown Source)
+	at java.desktop/java.awt.Container.processEvent(Unknown Source)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.Component.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.Component.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue$5.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$5.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.kt:585)
+	at com.intellij.ide.IdeEventQueue.dispatchMouseEvent(IdeEventQueue.kt:530)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent$lambda$16(IdeEventQueue.kt:473)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWriteIntentReadAction$lambda$6(AnyThreadWriteThreadingSupport.kt:274)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWithTemporaryThreadLocal(AnyThreadWriteThreadingSupport.kt:204)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runWriteIntentReadAction(AnyThreadWriteThreadingSupport.kt:274)
+	at com.intellij.openapi.application.impl.AnyThreadWriteThreadingSupport.runPreventiveWriteIntentReadAction(AnyThreadWriteThreadingSupport.kt:218)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.kt:473)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent$lambda$12$lambda$11$lambda$10$lambda$9(IdeEventQueue.kt:307)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computePrioritized(CoreProgressManager.java:864)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent$lambda$12$lambda$11$lambda$10(IdeEventQueue.kt:306)
+	at com.intellij.ide.IdeEventQueueKt.performActivity$lambda$3(IdeEventQueue.kt:958)
+	at com.intellij.openapi.application.TransactionGuardImpl.performActivity(TransactionGuardImpl.java:117)
+	at com.intellij.ide.IdeEventQueueKt.performActivity(IdeEventQueue.kt:958)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent$lambda$12(IdeEventQueue.kt:301)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.kt:341)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
+2025-08-12 17:05:23,889 [1332756]   WARN - #c.i.o.v.n.p.PersistentFSImpl - Can't find root[#312180] in persistence
+2025-08-12 17:05:23,919 [1332786]   WARN - #com.android.tools.ndk.HotfixForOCInitialTablesBuildingActivity - Overriding OCInitialTablesBuildingActivity with HotfixForOCInitialTablesBuildingActivity
+2025-08-12 17:05:24,443 [1333310]   WARN - #c.i.o.e.i.PsiBasedStripTrailingSpacesFilter - No current project is given, trailing spaces will be stripped later (postponed). File: /home/alma/AndroidStudioProjects/primeraClase/build.gradle.kts
+2025-08-12 17:05:24,529 [1333396]   WARN - #c.i.o.e.i.PsiBasedStripTrailingSpacesFilter - No current project is given, trailing spaces will be stripped later (postponed). File: /home/alma/AndroidStudioProjects/primeraClase/settings.gradle.kts
+2025-08-12 17:05:24,556 [1333423]   WARN - #c.i.o.e.i.PsiBasedStripTrailingSpacesFilter - No current project is given, trailing spaces will be stripped later (postponed). File: /home/alma/AndroidStudioProjects/primeraClase/gradle.properties
+2025-08-12 17:05:25,043 [1333910]   WARN - #c.i.o.e.i.PsiBasedStripTrailingSpacesFilter - No current project is given, trailing spaces will be stripped later (postponed). File: /home/alma/AndroidStudioProjects/primeraClase/settings.gradle.kts
+2025-08-12 17:05:25,281 [1334148]   WARN - #c.i.o.e.i.PsiBasedStripTrailingSpacesFilter - No current project is given, trailing spaces will be stripped later (postponed). File: /home/alma/AndroidStudioProjects/primeraClase/build.gradle.kts
+2025-08-12 17:05:25,426 [1334293]   WARN - #c.i.o.e.i.PsiBasedStripTrailingSpacesFilter - No current project is given, trailing spaces will be stripped later (postponed). File: /home/alma/AndroidStudioProjects/primeraClase/app/build.gradle.kts
+2025-08-12 17:05:25,486 [1334353]   WARN - #c.i.o.e.i.PsiBasedStripTrailingSpacesFilter - No current project is given, trailing spaces will be stripped later (postponed). File: /home/alma/AndroidStudioProjects/primeraClase/app/build.gradle.kts
+2025-08-12 17:05:25,566 [1334433]   WARN - #c.i.o.e.i.PsiBasedStripTrailingSpacesFilter - No current project is given, trailing spaces will be stripped later (postponed). File: /home/alma/AndroidStudioProjects/primeraClase/app/src/test/java/com/example/primeraclase/ExampleUnitTest.kt
+2025-08-12 17:05:25,599 [1334466]   WARN - #c.i.o.e.i.PsiBasedStripTrailingSpacesFilter - No current project is given, trailing spaces will be stripped later (postponed). File: /home/alma/AndroidStudioProjects/primeraClase/app/src/androidTest/java/com/example/primeraclase/ExampleInstrumentedTest.kt
+2025-08-12 17:05:26,454 [1335321]   WARN - #c.i.o.e.i.PsiBasedStripTrailingSpacesFilter - No current project is given, trailing spaces will be stripped later (postponed). File: /home/alma/AndroidStudioProjects/primeraClase/build.gradle.kts
+2025-08-12 17:05:26,622 [1335489]   WARN - #c.i.o.e.i.PsiBasedStripTrailingSpacesFilter - No current project is given, trailing spaces will be stripped later (postponed). File: /home/alma/AndroidStudioProjects/primeraClase/app/build.gradle.kts
+2025-08-12 17:05:26,692 [1335559]   WARN - #c.i.o.e.i.PsiBasedStripTrailingSpacesFilter - No current project is given, trailing spaces will be stripped later (postponed). File: /home/alma/AndroidStudioProjects/primeraClase/app/src/main/java/com/example/primeraclase/MainActivity.kt
+2025-08-12 17:05:26,721 [1335588]   WARN - #c.i.o.e.i.PsiBasedStripTrailingSpacesFilter - No current project is given, trailing spaces will be stripped later (postponed). File: /home/alma/AndroidStudioProjects/primeraClase/app/src/main/java/com/example/primeraclase/ui/theme/Theme.kt
+2025-08-12 17:06:18,152 [1387019]   WARN - #c.i.o.p.i.j.JdkAuto - Multiple SdkType candidates kotlin.sequences.TransformingSequence@24ad725c. Proceeding with a first candidate: JavaSDK
+2025-08-12 17:10:24,273 [1633140]   WARN - #c.i.u.i.p.ProjectIndexableFilesFilterHealthCheck - Following files are indexable but they were NOT found in filter. Errors count: 10. Examples:
+file id=341229 path=/home/alma/AndroidStudioProjects/primeraClase/gradle
+file id=341230 path=/home/alma/AndroidStudioProjects/primeraClase/gradle/wrapper
+file id=341231 path=/home/alma/AndroidStudioProjects/primeraClase/gradle/wrapper/gradle-wrapper.jar
+file id=341233 path=/home/alma/AndroidStudioProjects/primeraClase/gradle/wrapper/gradle-wrapper.properties
+file id=341295 path=/home/alma/AndroidStudioProjects/primeraClase/.idea
+...
+2025-08-12 17:44:31,246 [3680113]   WARN - #c.i.i.a.CopyTBXReferenceAction - Cannot find TBX tool for IDE: AndroidStudio
+2025-08-12 17:50:09,914 [4018781]   WARN - #c.i.i.a.CopyTBXReferenceAction - Cannot find TBX tool for IDE: AndroidStudio
+2025-08-12 17:50:10,776 [4019643]   WARN - #c.i.i.a.CopyTBXReferenceAction - Cannot find TBX tool for IDE: AndroidStudio
+2025-08-12 17:50:11,180 [4020047]   WARN - #c.i.i.a.CopyTBXReferenceAction - Cannot find TBX tool for IDE: AndroidStudio
+2025-08-12 17:50:25,951 [4034818]   WARN - #c.i.o.v.n.p.PersistentFSImpl - Can't find root[#312180] in persistence
+2025-08-12 17:50:25,992 [4034859]   WARN - #com.android.tools.ndk.HotfixForOCInitialTablesBuildingActivity - Overriding OCInitialTablesBuildingActivity with HotfixForOCInitialTablesBuildingActivity
+2025-08-12 17:50:26,256 [4035123]   WARN - #c.i.o.f.i.FileEditorProviderManagerImpl - Please make class com.google.urlassistant.editor.UrlAssistantFileEditorProvider dumb-aware
+2025-08-12 17:50:26,256 [4035123]   WARN - #c.i.o.f.i.FileEditorProviderManagerImpl - Please make class com.android.tools.idea.editors.manifest.GradleManifestEditorProvider dumb-aware
+Downloading https://services.gradle.org/distributions/gradle-8.9-bin.zip
+.................................................................................................................................
+2025-08-12 18:05:21,836 [4930703]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: androidx.annotation:annotation-jvm:1.9.1'
+2025-08-12 18:05:21,836 [4930703]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.jetbrains.kotlin:kotlin-stdlib:2.2.0'
+2025-08-12 18:05:21,836 [4930703]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.jetbrains:annotations:23.0.0'
+2025-08-12 18:05:21,839 [4930706]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: androidx.arch.core:core-common:2.2.0'
+2025-08-12 18:05:21,839 [4930706]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: androidx.lifecycle:lifecycle-common-jvm:2.9.1'
+2025-08-12 18:05:21,839 [4930706]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.jspecify:jspecify:1.0.0'
+2025-08-12 18:05:21,841 [4930708]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.7.3'
+2025-08-12 18:05:21,841 [4930708]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.jetbrains.kotlin:kotlin-test-junit:2.2.0'
+2025-08-12 18:05:21,841 [4930708]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.jetbrains.kotlin:kotlin-test:2.2.0'
+2025-08-12 18:05:21,841 [4930708]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: junit:junit:4.13.2'
+2025-08-12 18:05:21,841 [4930708]   WARN - #c.i.o.e.s.p.m.LibraryDataService - Multiple project level libraries found with the same name 'Gradle: org.hamcrest:hamcrest-core:1.3'
+2025-08-12 18:05:26,810 [4935677]   WARN - #c.i.o.d.FrequentEventDetector - Too many events posted (101) #1. Event: 'RefreshSessionImpl: canceled=false launched=true queue=1 events=0'
+java.lang.Throwable
+	at com.intellij.openapi.diagnostic.FrequentEventDetector.generateMessage(FrequentEventDetector.java:65)
+	at com.intellij.openapi.diagnostic.FrequentEventDetector.manyEventsHappenedInSmallTimeSpan(FrequentEventDetector.java:61)
+	at com.intellij.openapi.diagnostic.FrequentEventDetector.getMessageOnEvent(FrequentEventDetector.java:43)
+	at com.intellij.openapi.diagnostic.FrequentEventDetector.eventHappened(FrequentEventDetector.java:100)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueueImpl.queueSession(RefreshQueueImpl.java:99)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueueImpl.execute(RefreshQueueImpl.java:59)
+	at com.intellij.openapi.vfs.newvfs.RefreshSessionImpl.launch(RefreshSessionImpl.java:125)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueue.refresh(RefreshQueue.java:51)
+	at com.intellij.openapi.vfs.newvfs.RefreshQueue.refresh(RefreshQueue.java:31)
+	at com.intellij.openapi.vfs.impl.local.LocalFileSystemBase.refreshFiles(LocalFileSystemBase.java:199)
+	at com.intellij.openapi.vfs.VfsUtil.markDirtyAndRefresh(VfsUtil.java:481)
+	at org.jetbrains.kotlin.idea.base.projectStructure.forwardDeclarations.KotlinForwardDeclarationsFileGenerator.generateForwardDeclarationsForFqNames(KotlinForwardDeclarationsFileGenerator.kt:53)
+	at org.jetbrains.kotlin.idea.base.projectStructure.forwardDeclarations.KotlinForwardDeclarationsFileGenerator.generateForwardDeclarationFiles(KotlinForwardDeclarationsFileGenerator.kt:36)
+	at org.jetbrains.kotlin.idea.base.projectStructure.forwardDeclarations.KotlinForwardDeclarationsModelChangeService.createEntityStorageChanges(KotlinForwardDeclarationsModelChangeService.kt:82)
+	at org.jetbrains.kotlin.idea.base.projectStructure.forwardDeclarations.KotlinForwardDeclarationsModelChangeService.access$createEntityStorageChanges(KotlinForwardDeclarationsModelChangeService.kt:37)
+	at org.jetbrains.kotlin.idea.base.projectStructure.forwardDeclarations.KotlinForwardDeclarationsModelChangeService$1$1.emit(KotlinForwardDeclarationsModelChangeService.kt:50)
+	at org.jetbrains.kotlin.idea.base.projectStructure.forwardDeclarations.KotlinForwardDeclarationsModelChangeService$1$1.emit(KotlinForwardDeclarationsModelChangeService.kt:41)
+	at kotlinx.coroutines.flow.internal.FlowValueWrapperInternalKt.emitInternal(FlowValueWrapperInternal.kt:39)
+	at kotlinx.coroutines.flow.SharedFlowImpl.collect$suspendImpl(SharedFlow.kt:392)
+	at kotlinx.coroutines.flow.SharedFlowImpl$collect$1.invokeSuspend(SharedFlow.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:104)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:608)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:873)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:763)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:750)
+
+2025-08-12 18:05:26,857 [4935724]   WARN - #c.i.o.d.FrequentEventDetector - Too many events posted (101) #1. Event: 'RefreshSessionImpl: canceled=false launched=true queue=1 events=0'
+2025-08-12 18:05:26,905 [4935772]   WARN - #c.i.o.d.FrequentEventDetector - Too many events posted (101) #1. Event: 'RefreshSessionImpl: canceled=false launched=true queue=1 events=0'
+2025-08-12 18:05:26,940 [4935807]   WARN - #c.i.o.d.FrequentEventDetector - Too many events posted (101) #1. Event: 'RefreshSessionImpl: canceled=false launched=true queue=1 events=0'
+2025-08-12 18:05:26,987 [4935854]   WARN - #c.i.o.d.FrequentEventDetector - Too many events posted (101) #1. Event: 'RefreshSessionImpl: canceled=false launched=true queue=1 events=0'
+2025-08-12 18:05:27,358 [4936225]   WARN - #c.i.o.d.FrequentEventDetector - Too many events posted (101) #1. Event: 'RefreshSessionImpl: canceled=false launched=true queue=1 events=0'
+2025-08-12 18:05:27,449 [4936316]   WARN - #c.i.o.d.FrequentEventDetector - Too many events posted (101) #1. Event: 'RefreshSessionImpl: canceled=false launched=true queue=1 events=0'
+2025-08-12 18:05:27,508 [4936375]   WARN - #c.i.o.d.FrequentEventDetector - Too many events posted (101) #1. Event: 'RefreshSessionImpl: canceled=false launched=true queue=1 events=0'
+2025-08-12 18:05:27,560 [4936427]   WARN - #c.i.o.d.FrequentEventDetector - Too many events posted (101) #1. Event: 'RefreshSessionImpl: canceled=false launched=true queue=1 events=0'
+2025-08-12 18:05:27,616 [4936483]   WARN - #c.i.o.d.FrequentEventDetector - Too many events posted (101) #1. Event: 'RefreshSessionImpl: canceled=false launched=true queue=1 events=0'
+2025-08-12 18:05:43,558 [4952425]   WARN - #c.i.o.f.i.FileEditorProviderManagerImpl - Please make class com.android.tools.idea.editors.manifest.GradleManifestEditorProvider dumb-aware
+2025-08-12 18:05:43,559 [4952426]   WARN - #c.i.o.f.i.FileEditorProviderManagerImpl - Please make class com.google.urlassistant.editor.UrlAssistantFileEditorProvider dumb-aware
+2025-08-12 18:05:46,201 [4955068]   WARN - #c.i.o.f.i.FileEditorProviderManagerImpl - Please make class com.android.tools.idea.editors.manifest.GradleManifestEditorProvider dumb-aware
+2025-08-12 18:05:46,205 [4955072]   WARN - #c.i.o.f.i.FileEditorProviderManagerImpl - Please make class com.google.urlassistant.editor.UrlAssistantFileEditorProvider dumb-aware
+2025-08-12 18:06:45,350 [5014217]   WARN - #c.i.o.f.i.FileEditorProviderManagerImpl - Please make class com.android.tools.idea.editors.manifest.GradleManifestEditorProvider dumb-aware
+2025-08-12 18:06:45,352 [5014219]   WARN - #c.i.o.f.i.FileEditorProviderManagerImpl - Please make class com.google.urlassistant.editor.UrlAssistantFileEditorProvider dumb-aware
+2025-08-12 18:23:03,423 [5992290]   WARN - #o.j.a.u.LayoutLibraryLoader - SystemFonts: Loading font config from /opt/android-studio/plugins/design-tools/resources/layoutlib/data/fonts/fonts.xml
+2025-08-12 18:23:03,460 [5992327]   WARN - #o.j.a.u.LayoutLibraryLoader - SystemFonts: Loading font config from /opt/android-studio/plugins/design-tools/resources/layoutlib/data/fonts/font_fallback.xml
+2025-08-12 18:23:03,504 [5992371]   WARN - #o.j.a.u.LayoutLibraryLoader - studio: Unable to find pattern file or unable to map it for am
+2025-08-12 19:13:31,977 [9020844]   WARN - o.j.p.g.i.d.GradleDaemonServices - Unable to send daemon message for Gradle 8.13
+2025-08-12 19:13:31,977 [9020844]   WARN - o.j.p.g.i.d.GradleDaemonServices - org.gradle.api.tasks.util.internal.DefaultPatternSetFactory
+2025-08-12 19:13:32,002 [9020869]   WARN - o.j.p.g.i.d.GradleDaemonServices - Unable to send daemon message for Gradle 8.9
+2025-08-12 19:13:32,002 [9020869]   WARN - o.j.p.g.i.d.GradleDaemonServices - org.gradle.api.tasks.util.internal.DefaultPatternSetFactory
