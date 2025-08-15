@@ -114,3 +114,112 @@ Usé ese prompt porque quería entender bien que es lo que hace el @Autowired
 
 ### Aprendizajes Obtenidos:
 - Lo que hace el @Autowired y como funciona en mi código
+
+
+# Prompts de Testing
+
+## Prompt 2: Verificar q tengo bien el application yaml
+
+### Prompt Utilizado:
+[tengo un application yaml [application.yaml]]
+
+### Respuesta Recibida:
+
+Tu archivo application.yml sirve, pero no es la mejor práctica para configurar los tests. Estás mezclando la configuración de desarrollo con la de otros entornos, lo que puede traer problemas.
+
+Lo ideal es crear perfiles exclusivamente para testing. Esto asegura que tus pruebas siempre se ejecuten en un entorno aislado y predecible, sin importar cómo cambie la configuración de desarrollo.
+
+Por qué tu configuración actual funciona (pero no es ideal)
+Tu archivo application.yml es funcional. Podrías anotar tus clases de prueba con @ActiveProfiles("dev") y se ejecutarían usando tu base de datos H2 en memoria.
+
+El problema es el riesgo y la falta de claridad:
+
+Falta de Aislamiento: El perfil dev es para desarrollo. ¿Qué pasa si mañana decides cambiar la configuración de dev para que use una base de datos H2 en disco (y no en memoria) o cambias el ddl-auto a update para no perder tus datos mientras programas? Tus tests, que dependen de una base de datos limpia cada vez, empezarían a fallar de forma inesperada.
+
+Confusión de Intenciones: Mezclar perfiles de entorno (mysql, postgres) con perfiles de desarrollo (dev) en el mismo nivel que el testing puede ser confuso. Un perfil test deja claro que esa configuración es solo para pruebas automatizadas.
+
+La Mejor Práctica: Crear un Perfil de Test Dedicado
+No necesitas crear nuevos archivos .properties. Puedes adaptar tu application.yml para que sea más robusto y claro.
+
+Recomendación: Adapta tu application.yml
+Añade un nuevo perfil llamado test que contenga la configuración de la base de datos en memoria. Este perfil será usado exclusivamente por tus pruebas.
+
+````bash
+spring:
+profiles:
+# El perfil activo por defecto para desarrollo sigue siendo 'dev'
+active: dev
+
+---
+spring:
+config:
+activate:
+on-profile: dev
+# ... (Tu configuración de 'dev' se queda como está) ...
+datasource:
+url: jdbc:h2:mem:devdb # Cambia el nombre para diferenciarla
+driver-class-name: org.h2.Driver
+# ...
+
+---
+# =======================================================
+# NUEVO PERFIL EXCLUSIVO PARA TESTING
+# =======================================================
+spring:
+config:
+activate:
+on-profile: test
+datasource:
+# Usa una URL diferente para asegurar el aislamiento total
+url: jdbc:h2:mem:testdb
+driver-class-name: org.h2.Driver
+username: sa
+password:
+jpa:
+hibernate:
+# 'create-drop' es perfecto para tests: crea el esquema, ejecuta los tests y lo borra.
+ddl-auto: create-drop
+show-sql: false # Generalmente no necesitas ver el SQL en los logs de los tests
+
+---
+spring:
+config:
+activate:
+on-profile: mysql
+# ... (Tu configuración de 'mysql' se queda como está) ...
+
+---
+spring:
+config:
+activate:
+on-profile: postgres
+# ... (Tu configuración de 'postgres' se queda como está) ...
+
+````
+
+¿Cómo lo usas en tus tests?
+Ahora, en todas tus clases de prueba (@DataJpaTest o @SpringBootTest), simplemente activas este nuevo perfil. Es más limpio, seguro y explícito.
+
+````bash
+@DataJpaTest
+@ActiveProfiles("test") // <-- Le dices a Spring que use la configuración del perfil 'test'
+class EmpleadoRepositoryTest {
+// ... tus tests ...
+}
+````
+Ventajas de este enfoque:
+
+✅ Aislamiento Total: Tu configuración de dev puede cambiar libremente sin afectar jamás a tus pruebas.
+
+✅ Claridad: Cualquiera que vea el archivo YAML y los tests entiende inmediatamente qué configuración se está utilizando.
+
+✅ Seguridad: Eliminas el riesgo de que tus pruebas se ejecuten accidentalmente contra una base de datos de desarrollo o, peor aún, una de producción.
+
+### Modificaciones Realizadas:
+- Agregué lo que me recomendó la IA
+
+### Explicación del Prompt:
+Usé ese prompt porque quería ver como se usaba lo de los perfiles en los tests de repository
+
+### Aprendizajes Obtenidos:
+- Aprendí q es mucho mejor tener los tests totalmente aislados del resto del código
