@@ -8,7 +8,7 @@ spring:
     activate:
       on-profile: dev
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:devdb
     driver-class-name: org.h2.Driver
     username: sa
     password:
@@ -23,6 +23,24 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: h2
+  datasource:
+    # Usa una URL diferente para asegurar el aislamiento total
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      # 'create-drop' es perfecto para tests: crea el esquema, ejecuta los tests y lo borra.
+      ddl-auto: create-drop
+    show-sql: false # Generalmente no necesitas ver el SQL en los logs de los tests
 
 ---
 spring:
