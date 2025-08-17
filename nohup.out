@@ -1254,3 +1254,33 @@ java.lang.Throwable
 2025-08-12 19:13:31,977 [9020844]   WARN - o.j.p.g.i.d.GradleDaemonServices - org.gradle.api.tasks.util.internal.DefaultPatternSetFactory
 2025-08-12 19:13:32,002 [9020869]   WARN - o.j.p.g.i.d.GradleDaemonServices - Unable to send daemon message for Gradle 8.9
 2025-08-12 19:13:32,002 [9020869]   WARN - o.j.p.g.i.d.GradleDaemonServices - org.gradle.api.tasks.util.internal.DefaultPatternSetFactory
+2025-08-16 10:33:26,105 [    599]   WARN - #c.i.o.v.n.p.FSRecords - Records storage [/home/alma/.cache/JetBrains/IntelliJIdea2025.1/caches/records.dat] was in use by process [OwnershipInfo{owner pid: 11566, acquired at: 1755303678881}] which is not exist now (wasn't closed properly/crashed?) -> re-acquiring forcibly
+2025-08-16 10:33:26,123 [    617]   WARN - #c.i.o.v.n.p.PersistentFSLoader - [VFS load problem]: VFS wasn't safely shut down: records.wasClosedProperly is false
+2025-08-16 10:33:27,466 [   1960]   WARN - #c.i.o.v.n.p.PersistentFSLoader - [VFS load problem]: NOT_CLOSED_PROPERLY recovered, no problems remain
+2025-08-16 10:33:29,286 [   3780]   WARN - #c.i.o.f.i.EditorCompositeModelManager - Cannot use saved provider list (savedProviders={split-provider[text-editor;markdown-preview-editor]=[Element: <state/>]}, resolvedProvider=[])
+2025-08-16 10:33:29,369 [   3863]   WARN - #c.i.o.f.i.EditorCompositeModelManager - Cannot use saved provider list (savedProviders={split-provider[text-editor;markdown-preview-editor]=[Element: <state/>]}, resolvedProvider=[])
+2025-08-16 10:33:30,499 [   4993]   WARN - #c.i.s.c.i.StationSocketConnectionLoop - Discovery connection failed with NoSuchFileException (/run/user/1000/jb.station.sock)
+2025-08-16 10:33:39,948 [  14442]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2025-08-16 10:34:38,045 [  72539]   WARN - #o.j.i.maven - updateMavenProjects started: incremental=true, MavenProjectAware.reloadProject, sync selected 1 0 sistemaGestionEmpleados
+2025-08-16 10:34:39,577 [  74071]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+
+2025-08-16 10:34:39,577 [  74071]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+2025-08-16 10:34:39,577 [  74071]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/home/alma/.sdkman/candidates/maven/3.9.10/lib/guice-5.1.0-classes.jar)
+
+2025-08-16 10:34:39,577 [  74071]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/home/alma/.sdkman/candidates/maven/3.9.10/lib/guice-5.1.0-classes.jar)
+2025-08-16 10:34:39,577 [  74071]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+
+2025-08-16 10:34:39,577 [  74071]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+2025-08-16 10:34:39,577 [  74071]   WARN - #c.i.e.r.RemoteProcessSupport - Remote process stderr:WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+
+2025-08-16 10:34:39,577 [  74071]   WARN - #c.i.e.r.RemoteProcessSupport - WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+2025-08-16 10:34:43,230 [  77724]   WARN - #o.j.i.maven - updateMavenProjects finished: incremental=true, MavenProjectAware.reloadProject, sync selected 1 0 sistemaGestionEmpleados
+2025-08-16 10:38:22,333 [ 296827]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2025-08-16 10:51:01,279 [1055773]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2025-08-16 10:51:14,804 [1069298]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2025-08-16 10:51:37,025 [1091519]   WARN - #o.j.k.i.s.r.KotlinCompilerReferenceIndexStorage - kotlin-data-container is not found
+2025-08-16 11:34:44,450 [3678944]   WARN - c.i.d.a.c.p.ToolBasedDockerComposeConfigurationParser - Process wrote something into stderr, may be precursor of a problem. 
+2025-08-16 11:34:44,541 [3679035]   WARN - c.i.d.a.c.p.ToolBasedDockerComposeConfigurationParser - Process wrote something into stderr, may be precursor of a problem. 
+2025-08-16 11:39:20,554 [3955048]   WARN - c.i.d.a.c.p.ToolBasedDockerComposeConfigurationParser - Process wrote something into stderr, may be precursor of a problem. 
+2025-08-16 11:39:20,608 [3955102]   WARN - c.i.d.a.c.p.ToolBasedDockerComposeConfigurationParser - Process wrote something into stderr, may be precursor of a problem. 
+2025-08-16 11:39:28,356 [3962850]   WARN - JetBrains UI DSL - Row should not be empty
