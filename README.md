@@ -110,8 +110,8 @@ Desarrollar un sistema de gestión de empleados utilizando Spring Boot con JPA, 
 > 💡 **Nota**: Esta estimación considera la complejidad de configurar múltiples bases de datos, Docker y el aprendizaje de JPA. El tiempo incluye la configuración de profiles y la containerización de las bases de datos.
 
 ## 👨‍🎓 Información del Alumno
-- **Nombre y Apellido**: [Nombre y Apellido del Alumno]
-- **Legajo**: [Número de Legajo]
+- **Nombre y Apellido**: Alma Quinteros
+- **Legajo**: 62016
 
 > ⚠️ **IMPORTANTE**: Este trabajo práctico se realiza **INDIVIDUALMENTE**. Aunque se utilizan herramientas de colaboración como Pull Requests y Code Review, estas son para mantener buenas prácticas de desarrollo y un historial ordenado. Todo el desarrollo debe ser realizado por el mismo estudiante.
 
@@ -882,9 +882,59 @@ class EmpleadoServiceIntegrationTest {
     - Explicación de por qué se usó ese prompt
     - Aprendizajes obtenidos del uso de IA
 
-## 🐳 Instrucciones para Docker
+## 📑 Documentación de Endpoints
 
-### Levantar Bases de Datos
+| Método | Endpoint | Descripción | Ejemplo |
+|:------:|:---------|:------------|:--------|
+| **GET** | `/api/empleados` | Lista todos los empleados | `curl -X GET http://localhost:8080/api/empleados` |
+| **GET** | `/api/empleados/{id}` | Obtiene un empleado por su ID | `curl -X GET http://localhost:8080/api/empleados/1` |
+| **POST** | `/api/empleados` | Crea un nuevo empleado | `curl -X POST http://localhost:8080/api/empleados -H "Content-Type: application/json" -d '{"nombre":"Juan","apellido":"Pérez","email":"juan.perez@empresa.com","fechaContratacion":"2024-01-01","salario":50000.00}'` |
+| **PUT** | `/api/empleados/{id}` | Actualiza un empleado existente | `curl -X PUT http://localhost:8080/api/empleados/1 -H "Content-Type: application/json" -d '{"nombre":"Juan","apellido":"Gómez"}'` |
+| **DELETE** | `/api/empleados/{id}` | Elimina un empleado por su ID | `curl -X DELETE http://localhost:8080/api/empleados/1` |
+| **GET** | `/api/empleados/departamento/{nombre}` | Lista empleados de un departamento | `curl -X GET http://localhost:8080/api/empleados/departamento/IT` |
+| **GET** | `/api/empleados/salario?min={min}&max={max}` | Lista empleados por rango de salario | `curl -X GET "http://localhost:8080/api/empleados/salario?min=30000&max=60000"` |
+| **GET** | `/api/departamentos` | Lista todos los departamentos | `curl -X GET http://localhost:8080/api/departamentos` |
+| **POST** | `/api/departamentos` | Crea un nuevo departamento | `curl -X POST http://localhost:8080/api/departamentos -H "Content-Type: application/json" -d '{"nombre":"RRHH","descripcion":"Recursos Humanos"}'` |
+| **GET** | `/api/proyectos` | Lista todos los proyectos | `curl -X GET http://localhost:8080/api/proyectos` |
+| **POST** | `/api/proyectos` | Crea un nuevo proyecto | `curl -X POST http://localhost:8080/api/proyectos -H "Content-Type: application/json" -d '{"nombre":"Proyecto X","descripcion":"Migración a la nube"}'` |
+| **PUT** | `/api/proyectos/{id}/empleados` | Asigna empleados a un proyecto | `curl -X PUT http://localhost:8080/api/proyectos/1/empleados -H "Content-Type: application/json" -d '[1,2,3]'` |
+
+---
+
+## 🚀 Instrucciones para Usar el Proyecto
+
+Este sistema de gestión de empleados puede ejecutarse con **diferentes bases de datos** (H2, MySQL o PostgreSQL) utilizando **Spring Profiles**.  
+A continuación se detallan los pasos para instalar, ejecutar y probar el proyecto.
+
+---
+
+### 🔧 Requisitos Previos
+
+Antes de comenzar, asegurate de tener instalado:
+
+- **Java 21** o superior → [Descargar](https://adoptium.net/)
+- **Maven 3.9+** → [Descargar](https://maven.apache.org/)
+- **Docker y Docker Compose** → [Instalar](https://docs.docker.com/get-docker/)
+- **Git** → [Instalar](https://git-scm.com/)
+
+Opcionales para testing:
+- **Postman** o **Insomnia** (para probar APIs)
+- **curl** (línea de comandos)
+
+---
+
+### 📥 Instalación
+
+Clonar el repositorio e ingresar al proyecto:
+
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd sistemaGestionEmpleados
+```
+
+### 🐳 Instrucciones para Docker
+
+#### Levantar Bases de Datos
 ```bash
 # Levantar MySQL y PostgreSQL
 docker compose up -d
@@ -896,7 +946,7 @@ docker compose ps
 docker compose logs -f
 ```
 
-### Ejecutar Aplicación con Diferentes Profiles
+#### Ejecutar Aplicación con Diferentes Profiles
 ```bash
 # Con H2 (desarrollo)
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
@@ -908,7 +958,7 @@ docker compose logs -f
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=postgres
 ```
 
-### Detener Bases de Datos
+#### Detener Bases de Datos
 ```bash
 # Detener contenedores
 docker compose down
