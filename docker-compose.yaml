@@ -1,6 +1,7 @@
 services:
   mysql:
     image: mysql:8.0
+    profiles: ["mysql"]
     container_name: empleados_mysql
     environment:
       MYSQL_ROOT_PASSWORD: root_password
@@ -8,7 +9,7 @@ services:
       MYSQL_USER: empleados_user
       MYSQL_PASSWORD: empleados_pass
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     networks:
@@ -20,6 +21,7 @@ services:
 
   postgres:
     image: postgres:16
+    profiles: ["postgres"]
     container_name: empleados_postgres
     environment:
       POSTGRES_DB: empleados_db

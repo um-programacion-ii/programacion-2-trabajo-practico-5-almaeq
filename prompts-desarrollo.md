@@ -252,3 +252,142 @@ Usé ese prompt porque quería saber cómo conectar los controladores y las exce
 
 ### Aprendizajes Obtenidos:
 - Cómo hacer un manejador de excepciones global y no tocar los controladores
+
+## Prompt 3: Separar los yaml
+
+### Prompt Utilizado:
+[resulta q tengo q hacer yaml para cada uno asi quedan separados, como seria si esto es lo q tengo? [application.yaml]]
+
+### Respuesta Recibida:
+
+¡Excelente pregunta! Sí, puedes separar tu application.yaml en archivos individuales para cada perfil. De hecho, es una práctica muy común y recomendada para mantener la configuración más limpia y organizada.
+
+Y la mejor parte: no, no tienes que cambiar absolutamente nada en el resto de tu código Java. Tu lógica de negocio, controladores, servicios y repositorios no se ven afectados por cómo organizas tus archivos de configuración.
+
+Aquí te muestro cómo quedaría tu configuración separada en varios archivos .yaml. Simplemente tienes que crear estos archivos en la misma carpeta (src/main/resources/) y borrar el application.yaml monolítico.
+
+1. Archivo Principal: application.yaml
+   Este archivo ahora solo se encarga de definir configuraciones comunes o el perfil por defecto.
+
+````bash
+# src/main/resources/application.yaml
+
+spring:
+profiles:
+# Perfil activo por defecto si no se especifica otro
+active: dev
+````
+
+2. Perfil de Desarrollo: application-dev.yaml
+   Spring Boot sabe que este archivo pertenece al perfil dev por el nombre application-dev.yaml.
+
+````bash
+# src/main/resources/application-dev.yaml
+
+spring:
+docker:
+compose:
+enabled: false
+datasource:
+url: jdbc:h2:mem:devdb
+driver-class-name: org.h2.Driver
+username: sa
+password:
+h2:
+console:
+enabled: true
+path: /h2-console
+jpa:
+hibernate:
+ddl-auto: create-drop
+show-sql: true
+properties:
+hibernate:
+format_sql: true
+3. Perfil de Pruebas: application-h2.yaml
+   Lo mismo para el perfil de pruebas h2.
+````
+````bash
+# src/main/resources/application-h2.yaml
+
+spring:
+docker:
+compose:
+enabled: false
+datasource:
+url: jdbc:h2:mem:testdb
+driver-class-name: org.h2.Driver
+username: sa
+password:
+jpa:
+hibernate:
+ddl-auto: create-drop
+show-sql: false
+````
+
+4. Perfil de MySQL: application-mysql.yaml
+   Aquí mantenemos la solución al problema original, pero ahora está aislada en su propio archivo.
+````bash
+# src/main/resources/application-mysql.yaml
+
+spring:
+docker:
+compose:
+services:
+postgres: # Ignora el servicio de postgres en Docker
+enabled: false
+datasource:
+url: jdbc:mysql://localhost:3307/empleados_db?useSSL=false&serverTimezone=UTC
+driver-class-name: com.mysql.cj.jdbc.Driver
+username: empleados_user
+password: empleados_pass
+jpa:
+hibernate:
+ddl-auto: update
+````
+
+5. Perfil de PostgreSQL: application-postgres.yaml
+   Finalmente, el perfil de postgres. Ojo aquí: a tu configuración original le faltaba la solución para desactivar mysql, así que la he añadido para que funcione correctamente.
+
+````bash
+# src/main/resources/application-postgres.yaml
+
+spring:
+# Ignora el servicio de mysql en Docker para evitar el conflicto
+docker:
+compose:
+services:
+mysql:
+enabled: false
+# -----------------------------
+datasource:
+url: jdbc:postgresql://localhost:5432/empleados_db
+driver-class-name: org.postgresql.Driver
+username: empleados_user
+password: empleados_pass
+jpa:
+hibernate:
+ddl-auto: update
+````
+Resumen de Ventajas:
+Organización: Cada entorno (desarrollo, pruebas, producción con MySQL, etc.) tiene su propia configuración aislada.
+
+Claridad: Es mucho más fácil ver y modificar la configuración de un perfil específico.
+
+Sin cambios en el código: Como mencioné, tu código Java no necesita ninguna modificación.
+
+La ejecución es idéntica: Sigues arrancando la aplicación de la misma manera:
+
+````bash
+./mvnw spring-boot:run -Dspring-boot.run.profiles=mysql
+````
+
+### Modificaciones Realizadas:
+- Separé el yaml en los que me decía Gemini
+
+### Explicación del Prompt:
+Usé ese prompt porque no sabía en cuantos separarlos
+
+### Aprendizajes Obtenidos:
+- Es mejor práctica hace este tipo de yaml separados
+
