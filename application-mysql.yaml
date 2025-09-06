@@ -1,0 +1,17 @@
+spring:
+  # Activa solo el perfil "mysql" de Docker Compose
+  docker:
+    compose:
+      profiles:
+        active: mysql
+
+  # (Opcional) si quieres forzar credenciales por properties en vez de service connection:
+  datasource:
+    url: jdbc:mysql://localhost:3307/empleados_db?useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: empleados_user
+    password: empleados_pass
+
+  jpa:
+    hibernate:
+      ddl-auto: update
