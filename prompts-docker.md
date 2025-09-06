@@ -143,3 +143,134 @@ Usé ese prompt porque me daba error y no sabía cómo arreglarlo
 
 ### Aprendizajes Obtenidos:
 - Que hay que agregar el perfil 
+
+
+## Prompt 2: Error con el Dockerfile
+
+### Prompt Utilizado:
+[me da esto: [ docker compose up --profile mysql
+
+unknown flag: --profile]
+
+### Respuesta Recibida:
+
+¡Ah, es el mismo problema de la versión de Docker! No te preocupes, lo solucionaremos de una forma que no dependa de los perfiles para que no te vuelva a dar ese error.
+
+El error unknown flag: --profile confirma que tu versión de docker compose es la V1, que es más antigua y no entiende esa funcionalidad.
+
+La solución más simple es eliminar los perfiles de tu docker-compose.yaml y, en su lugar, le diremos a Docker Compose exactamente qué servicio queremos iniciar por su nombre.
+```bash
+services:
+# Servicio de tu aplicación Spring Boot (lo mantenemos por si usas el Flujo 3)
+app:
+build: .
+container_name: sistema_app
+ports:
+- "8080:8080"
+environment:
+- SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE}
+- SPRING_DATASOURCE_URL_MYSQL=jdbc:mysql://mysql:3306/empleados_db
+- SPRING_DATASOURCE_URL_POSTGRES=jdbc:postgresql://postgres:5432/empleados_db
+- SPRING_DATASOURCE_USERNAME=empleados_user
+- SPRING_DATASOURCE_PASSWORD=empleados_pass
+networks:
+- empleados_network
+
+# Servicio de base de datos MySQL
+mysql:
+image: mysql:8.0
+container_name: empleados_mysql
+environment:
+MYSQL_ROOT_PASSWORD: root_password
+MYSQL_DATABASE: empleados_db
+MYSQL_USER: empleados_user
+MYSQL_PASSWORD: empleados_pass
+ports:
+- "3307:3306"
+volumes:
+- mysql_data:/var/lib/mysql
+networks:
+- empleados_network
+healthcheck:
+test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+timeout: 20s
+retries: 10
+
+# Servicio de base de datos PostgreSQL
+postgres:
+image: postgres:16
+container_name: empleados_postgres
+environment:
+POSTGRES_DB: empleados_db
+POSTGRES_USER: empleados_user
+POSTGRES_PASSWORD: empleados_pass
+ports:
+- "5432:5432"
+volumes:
+- postgres_data:/var/lib/postgresql/data
+networks:
+- empleados_network
+healthcheck:
+test: ["CMD-SHELL", "pg_isready -U empleados_user -d empleados_db"]
+timeout: 20s
+retries: 10
+
+volumes:
+mysql_data:
+postgres_data:
+
+networks:
+empleados_network:
+driver: bridge
+```
+Paso 1: Actualiza tu docker-compose.yaml
+He modificado tu archivo para quitar las líneas de profiles. Esto hará que el archivo sea compatible con tu versión de Docker. Reemplaza el contenido de tu docker-compose.yaml con este:
+
+Paso 2: El Nuevo Flujo de Trabajo (Sin --profile)
+Ahora, para trabajar con el método híbrido (base de datos en Docker, aplicación local), los comandos son más directos:
+
+Para trabajar con MySQL:
+
+Limpia el entorno anterior:
+
+```bash
+docker compose down -v
+
+2.  **Inicia SOLO el contenedor de MySQL**:
+```bash
+docker compose up mysql
+    (Deja esta terminal abierta)
+````
+Inicia tu aplicación: En una nueva terminal, ejecuta:
+
+```bash
+
+./mvnw spring-boot:run -Dspring-boot.run.profiles=mysql
+```
+Para trabajar con PostgreSQL:
+
+Limpia el entorno anterior:
+```bash
+
+docker compose down -v
+2.  **Inicia SOLO el contenedor de PostgreSQL**:
+```bash
+docker compose up postgres
+    (Deja esta terminal abierta)
+```
+Inicia tu aplicación: En una nueva terminal, ejecuta:
+
+```bash
+./mvnw spring-boot:run -Dspring-boot.run.profiles=postgres
+```
+
+Como puedes ver, al quitar los perfiles, simplemente le dices a docker compose up el nombre del servicio que quieres iniciar. Esto es totalmente compatible con tu versión de Docker y te permitirá avanzar sin problemas.
+
+### Modificaciones Realizadas:
+- No realicé cambios del docker-compose que me pasó
+
+### Explicación del Prompt:
+cuando hacía ./mvnw spring-boot:run -Dspring-boot.run.profiles=mysql no me andaba por lo del --profile
+
+### Aprendizajes Obtenidos:
+- A manejar el tema de los perfiles de mysql y postgres
