@@ -932,40 +932,57 @@ git clone <URL_DEL_REPOSITORIO>
 cd sistemaGestionEmpleados
 ```
 
-### 🐳 Instrucciones para Docker
+## 🚀 Instrucciones de Ejecución y Flujos de Trabajo
 
-#### Levantar Bases de Datos
+Este proyecto está diseñado para ser flexible, permitiendo tres flujos de trabajo principales según tus necesidades.
+
+Flujo 1: Desarrollo Rápido (Local con H2)
+Ideal para cambios rápidos en la lógica de negocio sin depender de Docker. La aplicación utiliza una base de datos en memoria que se reinicia cada vez.
+
+1. Asegúrate de que Docker no esté corriendo para evitar conflictos de puertos:
 ```bash
-# Levantar MySQL y PostgreSQL
-docker compose up -d
-
-# Verificar que los contenedores estén corriendo
-docker compose ps
-
-# Ver logs de los contenedores
-docker compose logs -f
-```
-
-#### Ejecutar Aplicación con Diferentes Profiles
-```bash
-# Con H2 (desarrollo)
-./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
-
-# Con MySQL
-./mvnw spring-boot:run -Dspring-boot.run.profiles=mysql
-
-# Con PostgreSQL
-./mvnw spring-boot:run -Dspring-boot.run.profiles=postgres
-```
-
-#### Detener Bases de Datos
-```bash
-# Detener contenedores
 docker compose down
-
-# Detener y eliminar volúmenes
-docker compose down -v
+````
+2. Ejecuta la aplicación con el perfil dev:
+```bash
+./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
 ```
+Una vez iniciada, puedes acceder a la API en http://localhost:8080 y a la consola de la base de datos H2 en http://localhost:8080/h2-console (JDBC URL: jdbc:h2:mem:devdb).
+
+Flujo 2: Desarrollo Híbrido (App Local + Base de Datos en Docker)
+El método más recomendado para el desarrollo diario. Te permite ejecutar y depurar la aplicación desde tu IDE mientras te conectas a una base de datos real (MySQL o PostgreSQL) que corre en un contenedor.
+
+Para usar con MySQL:
+
+1. Limpia el entorno anterior (si es necesario):
+```bash
+docker compose down
+````
+2. Inicia SÓLO el contenedor de MySQL:
+```bash
+docker compose up mysql
+````
+Deja esta terminal abierta para ver los logs de la base de datos.
+
+3. Inicia tu aplicación: En una nueva terminal, ejecuta el comando de Maven apuntando al perfil mysql:
+```bash
+./mvnw spring-boot:run -Dspring-boot.run.profiles=mysql
+````
+
+Para usar con PostgreSQL:
+
+1. Limpia el entorno anterior (si es necesario):
+```bash
+docker compose down
+````
+2. Inicia SÓLO el contenedor de PostgreSQL:
+```bash
+docker compose up postgres
+````
+3. Inicia tu aplicación: En una nueva terminal, ejecuta:
+```bash
+./mvnw spring-boot:run -Dspring-boot.run.profiles=postgres
+````
 
 ## 📚 Recursos Adicionales
 
