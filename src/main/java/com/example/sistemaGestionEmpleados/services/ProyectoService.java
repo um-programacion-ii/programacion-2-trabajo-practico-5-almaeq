@@ -4,6 +4,7 @@ import com.example.sistemaGestionEmpleados.exceptions.ProyectoNoEncontradoExcept
 import com.example.sistemaGestionEmpleados.models.Proyecto;
 
 import java.util.List;
+import java.util.Set;
 
 public interface ProyectoService {
     Proyecto guardar(Proyecto proyecto);
@@ -12,4 +13,5 @@ public interface ProyectoService {
     Proyecto actualizar(Long id, Proyecto proyecto) throws ProyectoNoEncontradoException;
     List<Proyecto> buscarPorProyectosActivos();
     void eliminar(Long id);
+    Proyecto asignarEmpleadosAProyecto(Long proyectoId, Set<Long> empleadoIds);
 }

@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.ArgumentMatchers.any;
@@ -123,5 +124,21 @@ public class ProyectoControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.size()", is(1)))
                 .andExpect(jsonPath("$[0].nombre", is(proyectoPrueba.getNombre())));
+    }
+
+    @Test
+    void cuandoAsignarEmpleados_entoncesRetornaOkConProyectoActualizado() throws Exception {
+
+        Set<Long> idsEmpleados = Set.of(10L, 20L);
+        // Suponemos que el servicio devuelve el proyecto con los empleados ya asignados
+        given(proyectoService.asignarEmpleadosAProyecto(anyLong(), any(Set.class))).willReturn(proyectoPrueba);
+
+        mockMvc.perform(put("/api/proyectos/{proyectoId}/asignar-empleados", 1L)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        // Convertimos el Set de IDs a un string JSON
+                        .content(objectMapper.writeValueAsString(idsEmpleados)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id", is(1)))
+                .andExpect(jsonPath("$.nombre", is("Proyecto Centinela")));
     }
 }

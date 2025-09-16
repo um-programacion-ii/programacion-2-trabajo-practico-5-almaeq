@@ -1,7 +1,9 @@
 package com.example.sistemaGestionEmpleados.services;
 
 import com.example.sistemaGestionEmpleados.exceptions.ProyectoNoEncontradoException;
+import com.example.sistemaGestionEmpleados.models.Empleado;
 import com.example.sistemaGestionEmpleados.models.Proyecto;
+import com.example.sistemaGestionEmpleados.repositories.EmpleadoRepository;
 import com.example.sistemaGestionEmpleados.repositories.ProyectoRepository;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,8 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,6 +26,10 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ProyectoServiceIntegrationTest {
     @Autowired
     private ProyectoService proyectoService;
+
+    // Se necesita para crear empleados de prueba
+    @Autowired
+    private EmpleadoRepository empleadoRepository;
 
     @Autowired
     private ProyectoRepository proyectoRepository;
@@ -141,7 +150,83 @@ public class ProyectoServiceIntegrationTest {
     }
 
 
-    //Método de ayuda para crear una instancia de Proyecto.
+    @Test
+    void cuandoAsignarNuevosEmpleados_entoncesSeAsignanCorrectamente() {
+
+        Proyecto proyecto = proyectoService.guardar(crearProyectoDePrueba("Proyecto Conquista", LocalDate.now(), LocalDate.now().plusYears(1)));
+        Empleado empleado1 = empleadoRepository.save(crearEmpleadoDePrueba("empleado1@test.com"));
+        Empleado empleado2 = empleadoRepository.save(crearEmpleadoDePrueba("empleado2@test.com"));
+        Set<Long> idsEmpleados = Set.of(empleado1.getId(), empleado2.getId());
+
+        proyectoService.asignarEmpleadosAProyecto(proyecto.getId(), idsEmpleados);
+
+        Proyecto proyectoActualizado = proyectoRepository.findByIdWithEmpleados(proyecto.getId()).orElseThrow();
+        Empleado empleado1Actualizado = empleadoRepository.findById(empleado1.getId()).orElseThrow();
+
+        // 1. El proyecto tiene 2 empleados
+        assertEquals(2, proyectoActualizado.getEmpleados().size());
+
+        // 2. Los IDs de los empleados en el proyecto son los correctos
+        Set<Long> idsEnProyecto = proyectoActualizado.getEmpleados().stream()
+                .map(Empleado::getId)
+                .collect(Collectors.toSet());
+        assertTrue(idsEnProyecto.containsAll(idsEmpleados));
+
+        // 3. El empleado 1 tiene el proyecto en su lista de proyectos
+        assertTrue(empleado1Actualizado.getProyectos().stream()
+                .anyMatch(p -> p.getId().equals(proyecto.getId())));
+    }
+
+    @Test
+    void cuandoReemplazarEmpleados_entoncesSeActualizaLaAsignacion() {
+        Proyecto proyecto = proyectoService.guardar(crearProyectoDePrueba("Proyecto Legado", LocalDate.now(), LocalDate.now().plusYears(1)));
+        Empleado empleado1 = empleadoRepository.save(crearEmpleadoDePrueba("empleado1@test.com"));
+        Empleado empleado2 = empleadoRepository.save(crearEmpleadoDePrueba("empleado2@test.com"));
+        Empleado empleado3 = empleadoRepository.save(crearEmpleadoDePrueba("empleado3@test.com"));
+
+        // Asignación inicial: empleado1 y empleado2
+        proyectoService.asignarEmpleadosAProyecto(proyecto.getId(), Set.of(empleado1.getId(), empleado2.getId()));
+
+        //Nueva asignación: empleado2 y empleado3
+        proyectoService.asignarEmpleadosAProyecto(proyecto.getId(), Set.of(empleado2.getId(), empleado3.getId()));
+
+        Proyecto proyectoActualizado = proyectoRepository.findByIdWithEmpleados(proyecto.getId()).orElseThrow();
+        Empleado empleado1Actualizado = empleadoRepository.findById(empleado1.getId()).orElseThrow();
+        Empleado empleado3Actualizado = empleadoRepository.findById(empleado3.getId()).orElseThrow();
+
+        // 1. El proyecto ahora tiene 2 empleados
+        assertEquals(2, proyectoActualizado.getEmpleados().size());
+
+        // 2. El empleado 1 ya NO está en el proyecto
+        assertTrue(proyectoActualizado.getEmpleados().stream().noneMatch(e -> e.getId().equals(empleado1.getId())));
+        assertTrue(empleado1Actualizado.getProyectos().isEmpty(), "El empleado 1 no debería tener proyectos asignados");
+
+        // 3. El empleado 3 AHORA SÍ está en el proyecto
+        assertTrue(proyectoActualizado.getEmpleados().stream().anyMatch(e -> e.getId().equals(empleado3.getId())));
+        assertTrue(empleado3Actualizado.getProyectos().stream().anyMatch(p -> p.getId().equals(proyecto.getId())));
+    }
+
+    @Test
+    void cuandoQuitarTodosLosEmpleados_entoncesProyectoQuedaVacio() {
+        Proyecto proyecto = proyectoService.guardar(crearProyectoDePrueba("Proyecto Solitario", LocalDate.now(), LocalDate.now().plusYears(1)));
+        Empleado empleado = empleadoRepository.save(crearEmpleadoDePrueba("empleado.unico@test.com"));
+        proyectoService.asignarEmpleadosAProyecto(proyecto.getId(), Set.of(empleado.getId()));
+
+        // Act: Llamamos al método con una lista de IDs vacía
+        proyectoService.asignarEmpleadosAProyecto(proyecto.getId(), Set.of());
+
+        Proyecto proyectoActualizado = proyectoRepository.findByIdWithEmpleados(proyecto.getId()).orElseThrow();
+        Empleado empleadoActualizado = empleadoRepository.findById(empleado.getId()).orElseThrow();
+
+        // 1. La lista de empleados del proyecto está vacía
+        assertTrue(proyectoActualizado.getEmpleados().isEmpty());
+
+        // 2. La lista de proyectos del empleado está vacía
+        assertTrue(empleadoActualizado.getProyectos().isEmpty());
+    }
+
+
+    // --- Métodos de Ayuda ---
 
     private Proyecto crearProyectoDePrueba(String nombre, LocalDate inicio, LocalDate fin) {
         Proyecto proy = new Proyecto();
@@ -150,5 +235,15 @@ public class ProyectoServiceIntegrationTest {
         proy.setFechaInicio(inicio);
         proy.setFechaFin(fin);
         return proy;
+    }
+
+    private Empleado crearEmpleadoDePrueba(String email) {
+        Empleado empleado = new Empleado();
+        empleado.setNombre("EmpleadoDePrueba");
+        empleado.setApellido("ApellidoPrueba"); // Campo añadido
+        empleado.setEmail(email);
+        empleado.setFechaContratacion(LocalDate.now()); // Campo añadido
+        empleado.setSalario(new BigDecimal("50000.00")); // Campo añadido
+        return empleado;
     }
 }
