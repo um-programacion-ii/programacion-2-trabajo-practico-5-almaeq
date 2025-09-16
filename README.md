@@ -110,8 +110,8 @@ Desarrollar un sistema de gestión de empleados utilizando Spring Boot con JPA, 
 > 💡 **Nota**: Esta estimación considera la complejidad de configurar múltiples bases de datos, Docker y el aprendizaje de JPA. El tiempo incluye la configuración de profiles y la containerización de las bases de datos.
 
 ## 👨‍🎓 Información del Alumno
-- **Nombre y Apellido**: [Nombre y Apellido del Alumno]
-- **Legajo**: [Número de Legajo]
+- **Nombre y Apellido**: Alma Quinteros
+- **Legajo**: 62016
 
 > ⚠️ **IMPORTANTE**: Este trabajo práctico se realiza **INDIVIDUALMENTE**. Aunque se utilizan herramientas de colaboración como Pull Requests y Code Review, estas son para mantener buenas prácticas de desarrollo y un historial ordenado. Todo el desarrollo debe ser realizado por el mismo estudiante.
 
@@ -882,40 +882,107 @@ class EmpleadoServiceIntegrationTest {
     - Explicación de por qué se usó ese prompt
     - Aprendizajes obtenidos del uso de IA
 
-## 🐳 Instrucciones para Docker
+## 📑 Documentación de Endpoints
 
-### Levantar Bases de Datos
+| Método | Endpoint | Descripción | Ejemplo |
+|:------:|:---------|:------------|:--------|
+| **GET** | `/api/empleados` | Lista todos los empleados | `curl -X GET http://localhost:8080/api/empleados` |
+| **GET** | `/api/empleados/{id}` | Obtiene un empleado por su ID | `curl -X GET http://localhost:8080/api/empleados/1` |
+| **POST** | `/api/empleados` | Crea un nuevo empleado | `curl -X POST http://localhost:8080/api/empleados -H "Content-Type: application/json" -d '{"nombre":"Juan","apellido":"Pérez","email":"juan.perez@empresa.com","fechaContratacion":"2024-01-01","salario":50000.00}'` |
+| **PUT** | `/api/empleados/{id}` | Actualiza un empleado existente | `curl -X PUT http://localhost:8080/api/empleados/1 -H "Content-Type: application/json" -d '{"nombre":"Juan","apellido":"Gómez"}'` |
+| **DELETE** | `/api/empleados/{id}` | Elimina un empleado por su ID | `curl -X DELETE http://localhost:8080/api/empleados/1` |
+| **GET** | `/api/empleados/departamento/{nombre}` | Lista empleados de un departamento | `curl -X GET http://localhost:8080/api/empleados/departamento/IT` |
+| **GET** | `/api/empleados/salario?min={min}&max={max}` | Lista empleados por rango de salario | `curl -X GET "http://localhost:8080/api/empleados/salario?min=30000&max=60000"` |
+| **GET** | `/api/departamentos` | Lista todos los departamentos | `curl -X GET http://localhost:8080/api/departamentos` |
+| **POST** | `/api/departamentos` | Crea un nuevo departamento | `curl -X POST http://localhost:8080/api/departamentos -H "Content-Type: application/json" -d '{"nombre":"RRHH","descripcion":"Recursos Humanos"}'` |
+| **GET** | `/api/proyectos` | Lista todos los proyectos | `curl -X GET http://localhost:8080/api/proyectos` |
+| **POST** | `/api/proyectos` | Crea un nuevo proyecto | `curl -X POST http://localhost:8080/api/proyectos -H "Content-Type: application/json" -d '{"nombre":"Proyecto X","descripcion":"Migración a la nube"}'` |
+| PUT | /api/proyectos/{proyectoId}/asignar-empleados | Asigna empleados a un proyecto | curl -X PUT http://localhost:8080/api/proyectos/1/asignar-empleados -H "Content-Type: application/json" -d '[1,2,3]' |
+
+---
+
+## 🚀 Instrucciones para Usar el Proyecto
+
+Este sistema de gestión de empleados puede ejecutarse con **diferentes bases de datos** (H2, MySQL o PostgreSQL) utilizando **Spring Profiles**.  
+A continuación se detallan los pasos para instalar, ejecutar y probar el proyecto.
+
+---
+
+### 🔧 Requisitos Previos
+
+Antes de comenzar, asegurate de tener instalado:
+
+- **Java 21** o superior → [Descargar](https://adoptium.net/)
+- **Maven 3.9+** → [Descargar](https://maven.apache.org/)
+- **Docker y Docker Compose** → [Instalar](https://docs.docker.com/get-docker/)
+- **Git** → [Instalar](https://git-scm.com/)
+
+Opcionales para testing:
+- **Postman** o **Insomnia** (para probar APIs)
+- **curl** (línea de comandos)
+
+---
+
+### 📥 Instalación
+
+Clonar el repositorio e ingresar al proyecto:
+
 ```bash
-# Levantar MySQL y PostgreSQL
-docker compose up -d
-
-# Verificar que los contenedores estén corriendo
-docker compose ps
-
-# Ver logs de los contenedores
-docker compose logs -f
+git clone <URL_DEL_REPOSITORIO>
+cd sistemaGestionEmpleados
 ```
 
-### Ejecutar Aplicación con Diferentes Profiles
+## 🚀 Instrucciones de Ejecución y Flujos de Trabajo
+
+Este proyecto está diseñado para ser flexible, permitiendo tres flujos de trabajo principales según tus necesidades.
+
+Flujo 1: Desarrollo Rápido (Local con H2)
+Ideal para cambios rápidos en la lógica de negocio sin depender de Docker. La aplicación utiliza una base de datos en memoria que se reinicia cada vez.
+
+1. Asegúrate de que Docker no esté corriendo para evitar conflictos de puertos:
 ```bash
-# Con H2 (desarrollo)
-./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
-
-# Con MySQL
-./mvnw spring-boot:run -Dspring-boot.run.profiles=mysql
-
-# Con PostgreSQL
-./mvnw spring-boot:run -Dspring-boot.run.profiles=postgres
-```
-
-### Detener Bases de Datos
-```bash
-# Detener contenedores
 docker compose down
-
-# Detener y eliminar volúmenes
-docker compose down -v
+````
+2. Ejecuta la aplicación con el perfil dev:
+```bash
+./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
 ```
+Una vez iniciada, puedes acceder a la API en http://localhost:8080 y a la consola de la base de datos H2 en http://localhost:8080/h2-console (JDBC URL: jdbc:h2:mem:devdb).
+
+Flujo 2: Desarrollo Híbrido (App Local + Base de Datos en Docker)
+El método más recomendado para el desarrollo diario. Te permite ejecutar y depurar la aplicación desde tu IDE mientras te conectas a una base de datos real (MySQL o PostgreSQL) que corre en un contenedor.
+
+Para usar con MySQL:
+
+1. Limpia el entorno anterior (si es necesario):
+```bash
+docker compose down
+````
+2. Inicia SÓLO el contenedor de MySQL:
+```bash
+docker compose up mysql
+````
+Deja esta terminal abierta para ver los logs de la base de datos.
+
+3. Inicia tu aplicación: En una nueva terminal, ejecuta el comando de Maven apuntando al perfil mysql:
+```bash
+./mvnw spring-boot:run -Dspring-boot.run.profiles=mysql
+````
+
+Para usar con PostgreSQL:
+
+1. Limpia el entorno anterior (si es necesario):
+```bash
+docker compose down
+````
+2. Inicia SÓLO el contenedor de PostgreSQL:
+```bash
+docker compose up postgres
+````
+3. Inicia tu aplicación: En una nueva terminal, ejecuta:
+```bash
+./mvnw spring-boot:run -Dspring-boot.run.profiles=postgres
+````
 
 ## 📚 Recursos Adicionales
 

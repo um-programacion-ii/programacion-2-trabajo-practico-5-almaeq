@@ -1,0 +1,17 @@
+spring:
+  # Activa solo el perfil "postgres" de Docker Compose
+  docker:
+    compose:
+      profiles:
+        active: postgres
+
+  # (Opcional) si prefieres fijar manualmente la conexión
+  datasource:
+    url: jdbc:postgresql://localhost:5432/empleados_db
+    driver-class-name: org.postgresql.Driver
+    username: empleados_user
+    password: empleados_pass
+
+  jpa:
+    hibernate:
+      ddl-auto: update
