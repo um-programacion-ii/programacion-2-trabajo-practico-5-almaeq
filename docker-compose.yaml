@@ -6,11 +6,17 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE}
-      - SPRING_DATASOURCE_URL_MYSQL=jdbc:mysql://mysql:3306/empleados_db
-      - SPRING_DATASOURCE_URL_POSTGRES=jdbc:postgresql://postgres:5432/empleados_db
-      - SPRING_DATASOURCE_USERNAME=empleados_user
-      - SPRING_DATASOURCE_PASSWORD=empleados_pass
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
+      SPRING_DATASOURCE_URL_MYSQL: jdbc:mysql://mysql:3306/empleados_db
+      SPRING_DATASOURCE_URL_POSTGRES: jdbc:postgresql://postgres:5432/empleados_db
+      SPRING_DATASOURCE_USERNAME: empleados_user
+      SPRING_DATASOURCE_PASSWORD: empleados_pass
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
     networks:
       - empleados_network
 
