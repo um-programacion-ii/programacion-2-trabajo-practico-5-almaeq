@@ -897,7 +897,7 @@ class EmpleadoServiceIntegrationTest {
 | **POST** | `/api/departamentos` | Crea un nuevo departamento | `curl -X POST http://localhost:8080/api/departamentos -H "Content-Type: application/json" -d '{"nombre":"RRHH","descripcion":"Recursos Humanos"}'` |
 | **GET** | `/api/proyectos` | Lista todos los proyectos | `curl -X GET http://localhost:8080/api/proyectos` |
 | **POST** | `/api/proyectos` | Crea un nuevo proyecto | `curl -X POST http://localhost:8080/api/proyectos -H "Content-Type: application/json" -d '{"nombre":"Proyecto X","descripcion":"Migración a la nube"}'` |
-| **PUT** | `/api/proyectos/{id}/empleados` | Asigna empleados a un proyecto | `curl -X PUT http://localhost:8080/api/proyectos/1/empleados -H "Content-Type: application/json" -d '[1,2,3]'` |
+| PUT | /api/proyectos/{proyectoId}/asignar-empleados | Asigna empleados a un proyecto | curl -X PUT http://localhost:8080/api/proyectos/1/asignar-empleados -H "Content-Type: application/json" -d '[1,2,3]' |
 
 ---
 

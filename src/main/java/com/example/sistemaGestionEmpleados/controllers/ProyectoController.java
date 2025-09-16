@@ -4,15 +4,12 @@ import com.example.sistemaGestionEmpleados.models.Proyecto;
 import com.example.sistemaGestionEmpleados.services.ProyectoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/proyectos")
@@ -30,7 +27,6 @@ public class ProyectoController {
      * @return Lista de objetos Proyecto.
      */
     @Operation(summary = "Obtener todos los proyectos", description = "Devuelve una lista con todos los proyectos existentes.")
-    @ApiResponse(responseCode = "200", description = "Lista de proyectos obtenida con éxito")
     @GetMapping
     public List<Proyecto> obtenerTodos() {
         return proyectoService.obtenerTodos();
@@ -42,12 +38,6 @@ public class ProyectoController {
      * @return El objeto Proyecto correspondiente al ID.
      */
     @Operation(summary = "Obtener un proyecto por su ID")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Proyecto encontrado",
-                    content = @Content(schema = @Schema(implementation = Proyecto.class))),
-            @ApiResponse(responseCode = "404", description = "Proyecto no encontrado",
-                    content = @Content)
-    })
     @GetMapping("/{id}")
     public Proyecto obtenerPorId(
             @Parameter(description = "ID del proyecto a obtener", required = true) @PathVariable Long id
@@ -61,7 +51,6 @@ public class ProyectoController {
      * @return El proyecto guardado, incluyendo el ID asignado por la base de datos.
      */
     @Operation(summary = "Crear un nuevo proyecto")
-    @ApiResponse(responseCode = "201", description = "Proyecto creado exitosamente")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Proyecto crear(@RequestBody Proyecto proyecto) {
@@ -75,10 +64,6 @@ public class ProyectoController {
      * @return El proyecto con su información modificada.
      */
     @Operation(summary = "Actualizar un proyecto existente")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Proyecto actualizado"),
-            @ApiResponse(responseCode = "404", description = "Proyecto no encontrado")
-    })
     @PutMapping("/{id}")
     public Proyecto actualizar(
             @Parameter(description = "ID del proyecto a actualizar", required = true) @PathVariable Long id,
@@ -92,10 +77,6 @@ public class ProyectoController {
      * @param id El ID del proyecto a eliminar.
      */
     @Operation(summary = "Eliminar un proyecto por su ID")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "2.6.0", description = "Proyecto eliminado exitosamente"),
-            @ApiResponse(responseCode = "404", description = "Proyecto no encontrado")
-    })
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void eliminar(
@@ -110,9 +91,25 @@ public class ProyectoController {
      * @return Lista de proyectos activos.
      */
     @Operation(summary = "Obtener todos los proyectos activos", description = "Devuelve una lista de proyectos cuya fecha de finalización es posterior a la fecha actual.")
-    @ApiResponse(responseCode = "200", description = "Búsqueda de proyectos activos completada")
     @GetMapping("/activos")
     public List<Proyecto> obtenerProyectosActivos() {
         return proyectoService.buscarPorProyectosActivos();
+    }
+
+    /**
+     * Javadoc: Asigna o reemplaza la lista de empleados asociados a un proyecto específico.
+     * Si el proyecto ya tenía empleados, estos serán desvinculados antes de asignar los nuevos.
+     *
+     * @param proyectoId  El ID del proyecto al que se le asignarán los empleados.
+     * @param empleadoIds Un conjunto de IDs de los empleados que serán asignados al proyecto.
+     * @return El proyecto actualizado con la nueva lista de empleados.
+     */
+    @Operation(summary = "Asignar empleados a un proyecto", description = "Asocia una lista de empleados a un proyecto existente usando sus IDs.")
+    @PutMapping("/{proyectoId}/asignar-empleados")
+    public Proyecto asignarEmpleados(
+            @Parameter(description = "ID del proyecto", required = true) @PathVariable Long proyectoId,
+            @RequestBody Set<Long> empleadoIds
+    ) {
+        return proyectoService.asignarEmpleadosAProyecto(proyectoId, empleadoIds);
     }
 }
